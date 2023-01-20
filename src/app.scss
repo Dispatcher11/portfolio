@@ -1,0 +1,298 @@
+@import './Styles/index.scss';
+
+body {
+  margin: 0;
+  font-family: 'Mosak',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+// Navbar
+.nav {
+  position: absolute;
+  width: 100%;
+}
+
+.nav-bar {
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: $base-padding * 2 $base-padding * 2;
+  margin: auto;
+
+
+  .logo {
+      text-transform: lowercase;
+      font-weight: 700;
+        font-size: 2.8em;
+        color: $text-purple;
+        font-family: 'Jenthill';
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+      @include lg {
+        width: auto;
+        justify-content: flex-end;   
+         }
+      }
+
+      li {
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: $font-size-md;
+        color: $text-white;
+        z-index: 1;
+        &:hover {
+          color: $text-purple;
+        }        
+        @include lg {
+          display: none;
+        }
+      }
+
+      li:last-child {
+        display: inline-block;
+    }
+      
+ .toggle {
+  transform: scale(.5) rotate(180deg);
+  margin-top: -18px;
+ }
+
+}
+
+// Background colors
+ .color-one {
+  position: absolute;
+  background-color: $main-dark;
+  width: 32%;
+  height: 100%;
+  z-index: -1;
+  left: 0;
+  @include lg {
+  width: 100%;
+  }
+}
+.color-two {
+  position: absolute;
+  right: 0;
+  background-color: $main-purple;
+  width: 68%;
+  height: 100%;
+  z-index: -1;
+  @include lg {
+   display: none; 
+  }
+}
+
+// Homepage
+
+
+.home { 
+  height: 100vh;
+
+  .hero-section {
+    ::selection {
+      background: $main-dark;
+      color: $main-purple;
+      -webkit-text-stroke-color: $main-dark;
+    }
+  
+    font-family: 'MosakUltra';
+    color: white;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .container-one {
+      width: fit-content;
+      height: 100%;
+      @include lg {
+        display: none;
+      }
+      #svg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        right: -25px;
+        z-index: -1;
+      }
+    }
+    
+    .container-two {
+      max-width: 600px;
+      flex-grow: 1;
+      letter-spacing: .6;
+      font-size: 1.9em;
+      @include lg {
+      max-width: 85%;
+      padding-right: 0%;
+      margin: auto;
+      font-size: 1.4em;
+
+      }
+      p {
+      span {
+        font-family: 'Jenthill';
+      }
+    }
+
+      h1 {
+              span {
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+        &:hover {
+          color: white;
+        }
+      }
+      }
+
+    }
+  }
+
+  // About section
+
+  .about-section {
+    ::selection {
+      background: $text-white !important;
+    }
+  
+    width: 100%;
+    height: 100vh;
+    background-color: $main-turqoise;
+    @include lg {
+       display: flex;
+    align-items: center;
+    }
+   
+
+    .flex-container {
+     width: 75%;
+     height: 100%;
+    //  background-color: gray;
+     margin: auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+    //  flex-wrap: wrap;
+     @include breakpoint(1100px) {
+      width: 85%;
+     }
+     @include md {
+      flex-wrap: wrap;
+      height: 80%;
+      justify-content: flex-start;
+     }
+    }
+
+    .item-one {
+      width: 500px;
+      height: 300px;
+      // background-color: blue;
+      text-align: left;
+      // flex-grow: 2;
+      padding-right: 50px;
+      h1 {
+        font-size: 68px;
+        line-height: 89.3%;
+        padding-bottom: 20px;
+        font-family: 'MosakExtra';
+      }
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        font-family: "MosakLight";
+      }
+     @include breakpoint(1100px) {
+      padding-right: 40px;
+      h1 {
+        font-size: 55px;
+        line-height: 89.3%;
+        padding-bottom: 20px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        font-family: "MosakLight";
+      }
+
+     }
+      @include lg {
+        padding-right: 10px;
+        height: 300px;
+
+        h1 {
+          font-size: 55px;
+          line-height: 89.3%;
+          padding-bottom: 15px;
+        }
+      }
+    }
+    
+    .item-two {
+      // flex-grow: 1;
+      width: 394px;
+      height: 350px;
+      background-color: $text-white;
+      text-align: center;
+     @include breakpoint(1100px) {
+      transform: scale(.9);
+      min-width: 394px * .9;
+      height: 350px * .9;
+     }
+
+     @include md {
+      transform: scale(.9);
+      width: 80%;
+      height: auto;
+     }
+
+     @include md {
+      transform: scale(.9);
+      width: 90%;
+      height: 50%;
+
+     }
+     @include sm {
+      transform: scale(1);
+      width: 90%;
+      height: 40%;
+     }
+     
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        border: 2px solid $text-white;
+        transform: translateX(-10px) translateY(-10px);
+        transition: .1s ease-out;
+        &:hover {
+        transform: translateX(0px) translateY(0px);
+        }
+        @include lg {
+          border: 3px solid $text-white;
+      // width: 90%;
+      // height: 90%;
+        }
+      }
+    }
+  }
+  
+}

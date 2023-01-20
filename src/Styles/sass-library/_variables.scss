@@ -3,6 +3,11 @@ $primary: #326dee !default;
 $secondary: #1ac888 !default;
 $error: #d32752 !default;
 $info: #f6c31c !default;
+$main-purple: #774069 !default;
+$main-dark: #29272A !default;
+$main-turqoise: #4C3A69 !default;
+$text-white: #fff !default;
+$text-purple: hsl(240, 33%, 77%) !default;
 
 // color palette
 $colors: (
@@ -36,6 +41,7 @@ $base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1) !default;
 // font sizes
 $base-font-size: 1rem !default;
 $font-size-sm: $base-font-size * 0.75 !default;
+$font-size-md: $base-font-size * 1.2 !default;
 $font-size-lg: $base-font-size * 1.5 !default;
 $font-size-xl: $base-font-size * 2 !default;
 $font-size-xxl: $base-font-size * 3 !default;
