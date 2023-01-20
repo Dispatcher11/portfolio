@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1ef3a49a.css",
-    "main.js": "/portfolio/static/js/main.2c18220b.js",
+    "main.css": "/portfolio/static/css/main.820f3009.css",
+    "main.js": "/portfolio/static/js/main.701e018e.js",
+    "static/media/desk.svg": "/portfolio/static/media/desk.cbceae9d08a821ff84af49a9de7d4f0e.svg",
+    "static/media/Jenthill DEMO.ttf": "/portfolio/static/media/Jenthill DEMO.4052d3e0f49b10378b8e.ttf",
+    "static/media/Mosk Normal 400.ttf": "/portfolio/static/media/Mosk Normal 400.4e24e76bdb6942dd7e16.ttf",
+    "static/media/Mosk Bold 700.ttf": "/portfolio/static/media/Mosk Bold 700.4d4bf33385742b666512.ttf",
+    "static/media/Mosk Ultra-Bold 900.ttf": "/portfolio/static/media/Mosk Ultra-Bold 900.4ae330c3d92cc3121667.ttf",
+    "static/media/Mosk Extra-Bold 800.ttf": "/portfolio/static/media/Mosk Extra-Bold 800.a6d000a64405b8344cc7.ttf",
+    "static/media/speaker.jpg": "/portfolio/static/media/speaker.29a27784d90776616c4d.jpg",
     "index.html": "/portfolio/index.html",
-    "main.1ef3a49a.css.map": "/portfolio/static/css/main.1ef3a49a.css.map",
-    "main.2c18220b.js.map": "/portfolio/static/js/main.2c18220b.js.map"
+    "main.820f3009.css.map": "/portfolio/static/css/main.820f3009.css.map",
+    "main.701e018e.js.map": "/portfolio/static/js/main.701e018e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ef3a49a.css",
-    "static/js/main.2c18220b.js"
+    "static/css/main.820f3009.css",
+    "static/js/main.701e018e.js"
   ]
 }
