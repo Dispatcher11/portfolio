@@ -1,5 +1,6 @@
 import desk from "../img/desk.svg";
 import speaker from "../img/speaker.jpg";
+import web from "../img/websiteimage.png";
 
 
 const Home = () => {
@@ -10,10 +11,10 @@ const Home = () => {
           
       <div className="hero-section">
  
-        <div className="container-one">
+        <div className="container-one selection-transparent">
           <img src={desk} id="svg" alt="desk" />
         </div>
-        <div className="container-two">
+        <div className="container-two  selection-one">
           {/* <p>Hi, I'm Belal</p> */}
           <h1>I like making <span>fun</span>, interactive things with code. I also  <span>talk</span> & <span>write</span> about those things.</h1>
         </div>
@@ -32,6 +33,30 @@ const Home = () => {
           <div className="frame"></div>
         </div>
       </div>
+        </div>
+
+        <div className="projects-section">
+        <div className="bigger-container">
+          <h1>CURRENT PROJECTS</h1>
+
+           <div className="container">
+              <div className="item-one">
+                  <img src={web} alt="front end" />
+                  <div className="frame"></div>
+              </div>
+              <div className="item-two"></div>  
+          </div>
+          
+          <div className="container">
+              <div className="item-one">
+                  <img src={web} alt="front end" />
+                  <div className="frame"></div>
+
+              </div>
+              <div className="item-two"></div>  
+          </div>
+        </div>
+
         </div>
 
    </div>
