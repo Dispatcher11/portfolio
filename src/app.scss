@@ -392,19 +392,7 @@ body {
       }
     }
 
-    @include lg-min {
-     .item-one-one {
-      order: 1;
-      .image {
-        transform: translateX(-7px) translateY(-7px);
-      }
-    }
-    .item-two-two {
-      text-align: right;
-      align-items: flex-end;
-      padding: 0 0px;
-    } 
-    }
+    
     @include lg-min-max {
       .item-two-two {
         padding: 0 40px;
@@ -476,6 +464,25 @@ body {
       }
       
     }
+
+    @include lg-min {
+      .item-one-one {
+       order: 1;
+       .image {
+         transform: translateX(-7px) translateY(-7px);
+       }
+     }
+     .item-two-two {
+       text-align: right;
+       align-items: flex-end;
+       padding: 0 0px;
+       .button {
+         div {
+           transform: translateX(-5px) translateY(-5px);
+         }
+       }
+     } 
+     }
 
   
   }

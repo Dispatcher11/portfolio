@@ -75,7 +75,7 @@ const Home = () => {
                 <h3><FaHtml5 /></h3>
                 <h3><SiSass /></h3>
                 <h3><DiJavascript /></h3>
-                {/* <h3><FaTerminal /></h3> */}
+                <h3><SiFramer /></h3>
                 </div>
                 <div className="button">
                   <div>Visit the site</div>
