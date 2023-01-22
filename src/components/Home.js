@@ -2,10 +2,16 @@ import desk from "../img/desk.svg";
 import speaker from "../img/speaker.jpg";
 import { SiFramer } from 'react-icons/si';
 import { FaHtml5 } from 'react-icons/fa';
+import { BsFillTerminalFill } from 'react-icons/bs';
 import { SiSass } from 'react-icons/si';
 import { DiJavascript } from 'react-icons/di';
-import { FaTerminal } from 'react-icons/fa';
-
+import { SiTypescript } from 'react-icons/si';
+import { DiReact } from 'react-icons/di';
+import { SiFirebase } from 'react-icons/si';
+import { DiGit } from 'react-icons/di';
+import { BiDevices } from 'react-icons/bi';
+import { SiAdobeillustrator } from 'react-icons/si';
+import { motion } from "framer-motion";
 
 const Home = () => {
     return ( 
@@ -54,10 +60,10 @@ const Home = () => {
                 <h3><FaHtml5 /></h3>
                 <h3><SiSass /></h3>
                 <h3><DiJavascript /></h3>
-                <h3><FaTerminal /></h3>
+                <h3><BsFillTerminalFill /></h3>
                 </div>
                 <div className="button">
-                  <div>Visit the site</div>
+                  <div>VISIT THE SITE</div>
                 </div>
             </div>
           </div>
@@ -78,8 +84,64 @@ const Home = () => {
                 <h3><SiFramer /></h3>
                 </div>
                 <div className="button">
-                  <div>Visit the site</div>
+                  <div>VISIT THE SITE</div>
                 </div>
+            </div>
+          </div>
+
+          <div className="arsenal">
+            <h1>ARSENAL</h1>
+            <div className="items">
+              <div>
+                <motion.h3 
+                drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><FaHtml5 /></motion.h3>
+                <h4>HTML5</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><DiJavascript /></motion.h3>
+                <h4>CSS</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><FaHtml5 /></motion.h3>
+                <h4>JAVASCRIPT</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><SiSass /></motion.h3>
+                <h4>SASS</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><SiFramer /></motion.h3>
+                <h4>FRAMER MOTION</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}} ><SiTypescript/></motion.h3>
+                <h4>TYPESCRIPT</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><DiReact /></motion.h3>
+                <h4>REACT</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><SiFirebase /></motion.h3>
+                <h4>FIREBASE</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><DiGit /></motion.h3>
+                <h4>GIT</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><BsFillTerminalFill /></motion.h3>
+                <h4>TERMINAL</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><BiDevices /></motion.h3>
+                <h4>RESPONSIVE DESIGN</h4>
+              </div>
+              <div>
+                <motion.h3 drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}><SiAdobeillustrator /></motion.h3>
+                <h4>ILLUSTRATOR</h4>
+              </div>
+              
             </div>
           </div>
         </div>

@@ -487,5 +487,41 @@ body {
   
   }
 
+  .arsenal {
+    width: 100%;
+    height: auto;
+    background-color: $main-background-dark;
+    margin-bottom: 30px;
+    .items {
+      width: 80%;
+      display: flex;
+      margin: auto;
+      // background-color: white;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      div {
+        text-align: center;
+        // background-color: blue;
+        flex-basis: 25%;
+        margin-bottom: 60px;
+
+        @include md {
+          flex-basis: 20%;
+          margin-bottom: 50px;
+        }
+
+        h3 {
+          font-size: 78px;
+          padding: 20px 20px 0px 20px;
+
+          @include md {
+            font-size: 58px;
+          }
+        }
+      }
+    }
+  }
+
   
 }
