@@ -36,6 +36,22 @@ $breakpoints: (
   }
 }
 
+@mixin xl-min {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin lg-min-max {
+  @media (min-width: map-get($breakpoints, "lg")) and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin lg-min {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
 @mixin breakpoint($bp: 0) {
   @media (max-width: $bp) {
     @content;

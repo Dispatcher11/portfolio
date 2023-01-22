@@ -321,85 +321,163 @@ body {
   }
 
   .projects-section {
+    height: auto;
     width: 100%;
-    height: 140vh;
     background-color: $main-background-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding-top: 200px;
     text-align: center;
-    overflow: hidden;
-    @include lg {
-          height: 170vh;
-    }
-    
-    .bigger-container {
-      padding-top: 40px;
-      height: 90%;
-      background-color: darkred;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+
+    @include md {
+      // text-align: left;
     }
 
     h1 {
-      font-size: 3em;
-    }
-    .container {
-      width: 80%;
-      height: auto;
-      background-color: darkgray;
-      display: flex;
-      justify-content: space-between;
-      @include xl {
-        width: 100%;
+      margin: 60px;
+      font-size: 45px;
+      text-transform: uppercase;
+      @include md {
+        font-size: 40px;
+        margin: 45px 0 55px 35px;
       }
+    }
+
+    
+    .flex-container {
+    text-align: left;
+
+      margin: 0 auto;
+      padding-bottom: 150px;
+      width: 80%;
+      height: 50%;
+      // background-color: rgb(90, 90, 90);
+      display: flex;
+      justify-content: space-evenly;
       @include lg {
         flex-wrap: wrap;
-        padding: 30px;
+        padding-bottom: 100px;
+      }
+    }
+
+    .item-one {
+      background-color: white;
+      height: 300px;
+      flex-basis: 400px;
+      @include lg {
+        flex-grow: 1;
+        margin-bottom: 20px;
+        height: 400px;
+      }
+      @include md {
+        height: 300px;
+      }
+      @include sm {
+        height: 200px;
       }
 
-
-      .item-one {
-        position: relative;
-        width: 45%;
-        background-color: beige;
-        text-align: right;
-        @include lg {
-          width: 100%;
-          text-align: left;
+      .image {
+        background: url('./img/websiteimage.png');
+        width: 100%;
+        height: 100%;
+        background-size:cover;
+        background-repeat: no-repeat;
+        border: 2px solid white;
+        transform: translateX(5px) translateY(-7px);
+        transition: .1s ease-out;
+        &:hover {
+        transform: translateX(0px) translateY(0px);
         }
-        transform: scale(.9);
-        img {
-          position: relative;
-          object-fit: cover;
-          height: 306px * 1;
-          border: 2px solid $text-white;
-          transform: translateX(10px) translateY(-10px);
+      }
+    }
+
+    @include lg-min {
+     .item-one-one {
+      order: 1;
+      .image {
+        transform: translateX(-7px) translateY(-7px);
+      }
+    }
+    .item-two-two {
+      text-align: right;
+      align-items: flex-end;
+      padding: 0 0px;
+    } 
+    }
+    @include lg-min-max {
+      .item-two-two {
+        padding: 0 40px;
+      } 
+    }
+
+
+    .item-two {
+      display: flex;
+      flex-direction: column;
+      // background-color: red;
+      flex-basis: 500px;
+      margin: 10px 0px 0 20px;
+      @include lg {
+        margin: 10px 0 0 0;
+      }
+
+      h3 {
+        font-size: 25px;
+        font-family: "MosakExtra";
+      }
+      h4 {
+        font-size: 21px;
+        font-family: 'MosakLight';
+        margin-top: 10px;
+        word-spacing: 2px;
+      }
+
+      p {
+        font-size: 23px;
+        font-family: 'MosakLight';
+        color: rgb(214, 214, 214);
+        line-height: 30px;
+        margin-top: 10px;
+      }
+
+      .icons {
+        margin: 10px 0;
+        font-family: 'MosakUltra';
+        width: 180px;
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          font-size: 30px;
+        }
+      }
+
+      .button {
+        width: 170px;
+        background-color: white;
+        // color: black;
+        text-align: center;
+        margin-top: 20px;
+
+        div {
+          background-color: $main-background-dark;
+          padding: 10px 0px;
+          border: solid 3px white;
+          transform: translateX(5px) translateY(-5px);
           transition: .1s ease-out;
-          z-index: 2;
           &:hover {
           transform: translateX(0px) translateY(0px);
           }
         }
-        .frame {
-          height: 308px;
-          width: 510px;
-          z-index: 1;
-          background-color: white;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
+        
       }
-      .item-two {
-        width: 45%;
-        height: 350px;
-        background-color: white;
-        @include lg {
-          width: 100%;
-        }
+      @include lg {
+        flex-grow: 1;
       }
+      
     }
 
-
+  
   }
 
   

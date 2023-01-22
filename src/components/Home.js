@@ -1,6 +1,10 @@
 import desk from "../img/desk.svg";
 import speaker from "../img/speaker.jpg";
-import web from "../img/websiteimage.png";
+import { SiFramer } from 'react-icons/si';
+import { FaHtml5 } from 'react-icons/fa';
+import { SiSass } from 'react-icons/si';
+import { DiJavascript } from 'react-icons/di';
+import { FaTerminal } from 'react-icons/fa';
 
 
 const Home = () => {
@@ -36,28 +40,50 @@ const Home = () => {
         </div>
 
         <div className="projects-section">
-        <div className="bigger-container">
-          <h1>CURRENT PROJECTS</h1>
-
-           <div className="container">
-              <div className="item-one">
-                  <img src={web} alt="front end" />
-                  <div className="frame"></div>
-              </div>
-              <div className="item-two"></div>  
+          <h1>Current Projects</h1>
+          <div className="flex-container">
+            <div className="item-one">
+              <div className="image"></div>
+            </div>
+            <div className="item-two">
+                <h3>EYEDEAL</h3>
+                <h4>Is your eyeliner on fleek?</h4>
+                <p>An online store made with Vanilla JS (no external libraries!). Shop, add to your cart, and see your total. Products come from Makeup API.</p>
+                <h4>MADE WITH</h4>
+                <div className="icons">
+                <h3><FaHtml5 /></h3>
+                <h3><SiSass /></h3>
+                <h3><DiJavascript /></h3>
+                <h3><FaTerminal /></h3>
+                </div>
+                <div className="button">
+                  <div>Visit the site</div>
+                </div>
+            </div>
           </div>
-          
-          <div className="container">
-              <div className="item-one">
-                  <img src={web} alt="front end" />
-                  <div className="frame"></div>
 
-              </div>
-              <div className="item-two"></div>  
+          <div className="flex-container">
+            <div className="item-one item-one-one">
+              <div className="image"></div>
+            </div>
+            <div className="item-two item-two-two">
+                <h3>EYEDEAL</h3>
+                <h4>Is your eyeliner on fleek?</h4>
+                <p>An online store made with Vanilla JS (no external libraries!). Shop, add to your cart, and see your total. Products come from Makeup API.</p>
+                <h4>MADE WITH</h4>
+                <div className="icons">
+                <h3><FaHtml5 /></h3>
+                <h3><SiSass /></h3>
+                <h3><DiJavascript /></h3>
+                {/* <h3><FaTerminal /></h3> */}
+                </div>
+                <div className="button">
+                  <div>Visit the site</div>
+                </div>
+            </div>
           </div>
         </div>
-
-        </div>
+        
 
    </div>
 
