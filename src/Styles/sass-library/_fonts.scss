@@ -8,6 +8,10 @@
     src: url("../fonts/Mosk_Typeface/Mosk_Typeface/Mosk\ Bold\ 700.ttf");
   }
   @font-face {
+    font-family: 'MosakNormal';
+    src: url("../fonts/Mosk_Typeface/Mosk_Typeface/Mosk\ Medium\ 500.ttf");
+  }
+  @font-face {
     font-family: 'MosakExtra';
     src: url("../fonts/Mosk_Typeface/Mosk_Typeface/Mosk\ Extra-Bold\ 800.ttf");
   }
@@ -19,4 +23,9 @@
   @font-face {
     font-family: 'Jenthill';
     src: url("../fonts/Mosk_Typeface/Mosk_Typeface/Jenthill\ DEMO.ttf");
+  }
+
+  @font-face {
+    font-family: 'Work Sans';
+    src: url("../fonts/Mosk_Typeface/Mosk_Typeface/WorkSans-VariableFont_wght.ttf");
   }
