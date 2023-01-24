@@ -36,6 +36,34 @@ body {
   z-index: 3;
 }
 
+
+.mobile-nav {
+  display: none;
+  @include lg {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    background-color: $main-background-dark;
+    border-top: 2px hsl(0, 0%, 76%) solid;
+    ul {
+      display: flex;
+      margin: auto;
+      // width: 70%;
+      padding: 12px;
+      justify-content: center;
+      align-items: center;
+      li {
+        text-align: center;
+        font-size: .9em;
+        padding: 0 3%;
+      }
+    }
+  }
+}
+
 .nav-bar {
   top: 0;
   left: 0;
@@ -628,6 +656,9 @@ body {
       top: 10%;
       width: 90%;
       justify-content: flex-start;
+    }
+    @include md {
+      top: 5%;
     }
 
     h1 {
