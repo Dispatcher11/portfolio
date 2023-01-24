@@ -7,8 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background-color: $main-purple;
+  color: var(--text-white);
+  background-color: var(--main-purple);
   
 }
 
@@ -19,12 +19,12 @@ body {
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: $main-background-dark;
+  background: var(--scrollbar);
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $main-purple; 
+  background: var(--main-purple); 
   border-radius: 10px;
 }
 
@@ -47,7 +47,8 @@ body {
     z-index: 5;
     width: 100%;
     background-color: $main-background-dark;
-    border-top: 2px hsl(0, 0%, 76%) solid;
+    border-top: 2px var(--text-gray) solid;
+    background-color: var(--main-dark);
     ul {
       display: flex;
       margin: auto;
@@ -89,7 +90,7 @@ body {
       text-transform: lowercase;
       font-weight: 700;
         font-size: 2.8em;
-        color: $text-purple;
+        color: var(--text-purple);
         font-family: 'Jenthill';
       }
 
@@ -107,7 +108,7 @@ body {
         text-transform: capitalize;
         font-weight: bold;
         font-size: $font-size-md;
-        color: $text-white;
+        color: var(--text-var(--text-white));
         z-index: 1;
         &:hover {
           color: $text-purple;
@@ -135,11 +136,12 @@ body {
 // Background colors
  .color-one {
   position: absolute;
-  background-color: $main-dark;
+  background-color: var(--main-dark);
   width: 32%;
   height: 100%;
   z-index: 1;
   left: 0;
+  transition: .2s;
   @include lg {
   width: 100%;
   }
@@ -147,10 +149,12 @@ body {
 .color-two {
   position: absolute;
   right: 0;
-  background-color: $main-purple;
+  background-color: var(--main-purple);
   width: 68%;
   height: 100%;
   z-index: 1;
+  transition: .2s;
+
   @include lg {
    display: none; 
   }
@@ -165,24 +169,24 @@ body {
   z-index: 2;
   .selection-one {
     ::selection {
-      background: $main-dark;
-      color: $main-purple;
-      -webkit-text-stroke-color: $main-dark;
+      background: var(--main-dark);
+      color: var(--main-purple);
+      -webkit-text-stroke-color: var(--main-dark);
     }
   }
 
   .selection-transparent {
     ::selection {
       background: transparent;
-      color: $main-purple;
-      -webkit-text-stroke-color: $main-dark;
+      color: var(--main-purple);
+      -webkit-text-stroke-color: var(--main-dark);
     }
   }
   // .selection-two {
   //   ::selection {
-  //     background: $text-white;
+  //     background: var(--text-var(--text-white));
   //     color: $main-turqoise;
-  //     // -webkit-text-stroke-color: $main-dark;
+  //     // -webkit-text-stroke-color: var(--main-dark);
   //   }
   // }
   
@@ -191,7 +195,7 @@ body {
   .hero-section {
 
     font-family: 'MosakUltra';
-    color: white;
+    color: var(--text-var(--text-white));
     width: 100%;
     height: 100vh;
     margin: 0 auto;
@@ -248,10 +252,10 @@ body {
       h1 {
               span {
         color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: var(--text-white);
         &:hover {
-          color: white;
+          color: var(--text-white);
         }
       }
       }
@@ -263,12 +267,12 @@ body {
 
   .about-section {
     // ::selection {
-    //   background: $text-white;
+    //   background: var(--text-var(--text-white));
     // }
   
     width: 100%;
     height: 100vh;
-    background-color: $main-turqoise;
+    background-color: var(--main-turqoise);
     @include lg {
        display: flex;
     align-items: center;
@@ -306,7 +310,7 @@ body {
       // flex-grow: 2;
       padding-right: 50px;
       h1 {
-        font-size: 68px;
+        font-size: 65px;
         line-height: 89.3%;
         padding-bottom: 20px;
         font-family: 'MosakExtra';
@@ -344,7 +348,7 @@ body {
     }
     
     .item-two {
-      background-color: white;
+      background-color: var(--text-white);
       height: 350px;
       flex-basis: 400px;
       @include lg {
@@ -367,7 +371,7 @@ body {
         height: 100%;
         background-size:cover;
         background-repeat: no-repeat;
-        border: 2px solid white;
+        border: 2px solid var(--text-white);
         transform: translateX(5px) translateY(-7px);
         transition: .1s ease-out;
         &:hover {
@@ -399,14 +403,14 @@ body {
       //   width: 100%;
       //   object-fit: cover;
       //   height: 100%;
-      //   border: 2px solid $text-white;
+      //   border: 2px solid var(--text-var(--text-white));
       //   transform: translateX(-10px) translateY(-10px);
       //   transition: .1s ease-out;
       //   &:hover {
       //   transform: translateX(0px) translateY(0px);
       //   }
       //   @include lg {
-      //     border: 3px solid $text-white;
+      //     border: 3px solid var(--text-var(--text-white));
       // // width: 90%;
       // // height: 90%;
       //   }
@@ -414,10 +418,12 @@ body {
     }
   }
 
+// Projects Section
+
   .projects-section {
     height: auto;
     width: 100%;
-    background-color: $main-background-dark;
+    background-color: var(--main-background-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -456,7 +462,7 @@ body {
     }
 
     .item-one {
-      background-color: white;
+      background-color: var(--text-white);
       height: 300px;
       flex-basis: 400px;
       @include lg {
@@ -477,7 +483,7 @@ body {
         height: 100%;
         background-size:cover;
         background-repeat: no-repeat;
-        border: 2px solid white;
+        border: 2px solid var(--text-white);
         transform: translateX(5px) translateY(-7px);
         transition: .1s ease-out;
         &:hover {
@@ -518,7 +524,7 @@ body {
       p {
         font-size: 23px;
         font-family: 'MosakLight';
-        color: rgb(214, 214, 214);
+        color: var(--text-white);
         line-height: 30px;
         margin-top: 10px;
       }
@@ -545,7 +551,7 @@ body {
       }
 
       .button {
-        @include box-btn($main-background-dark, $text-white, 10px);
+        @include box-btn(var(--main-dark), var(--text-white), 10px);
         
       }
       @include lg {
@@ -581,15 +587,18 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    background-color: $main-background-dark;
+    background-color: var(--main-background-dark);
     margin-bottom: 30px;
+    color: var(--text-white);
+
     .items {
       width: 80%;
       display: flex;
       margin: auto;
-      // background-color: white;
+      // background-color: var(--text-white);
       justify-content: space-around;
       flex-wrap: wrap;
+
 
       div {
         text-align: center;
@@ -668,12 +677,13 @@ body {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background-color: $main-purple;
+  background-color: var(--main-purple);
+  
 
   .square {
     width: 84%;
     height: 75%;
-    background-color: hsl(274, 4%, 15%);
+    background-color: var(--main-dark);
     position: relative;
     top: 6%;
     margin: 0 auto;
@@ -730,6 +740,7 @@ body {
         border-radius: 4px;
         box-sizing: border-box;
         outline: none;
+        border: solid 2px var(--text-white);
       }
 
       textarea {
@@ -738,9 +749,9 @@ body {
       }
 
     .btn {
-      @include box-btn($main-background-dark, $text-white, 10px);
+      @include box-btn(var(--main-dark), var(--text-white), 10px);
       @include md {
-        @include box-btn($main-background-dark, $text-white, 10px, 100%);
+        @include box-btn(var(--main-dark), var(--text-white), 10px, 100%);
       }
 
     }
@@ -786,10 +797,11 @@ body {
       p {
         font-size: 20px;
         font-family: 'Work Sans', sans-serif;
-        color: #E0E0E0;
+        color: var(--text-gray);
         line-height: 30px;
         margin-top: 10px;
         line-height: 139.8%;
+        font-weight: 450;
         // word-spacing: .2em;
         
         &:first-child {
@@ -799,7 +811,7 @@ body {
         }
       }
       h3 {
-        color: #E0E0E0;
+        color: var(--text-gray);
         line-height: 35px;
         margin-top: 7px;
         @include md {

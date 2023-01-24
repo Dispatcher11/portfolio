@@ -1,5 +1,4 @@
 import desk from "../img/desk.svg";
-import speaker from "../img/speaker.jpg";
 import { SiFramer } from 'react-icons/si';
 import { DiBootstrap } from 'react-icons/di';
 import { FaHtml5 } from 'react-icons/fa';
@@ -19,6 +18,17 @@ import { DiCss3 } from 'react-icons/di';
 
 import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.5
+    }
+  }
+}
 const Home = () => {
     return ( 
       <div className="home">
@@ -39,7 +49,7 @@ const Home = () => {
       <div className="about-section">
         <div className="flex-container">
       <div className="item-one">
-        <h1>Frontend <br /> Developer</h1>
+        <h1>Frontend Developer</h1>
         <p>I like to craft solid and scalable frontend products with great user experiences.</p> <br />
         <p>So naturally I said yes. Since then I’ve spoken at conferences and meet-ups all over the world. It still terrifies me.</p>
         {/* <p><a href="#">Check out my videos and upcoming talks.</a></p> */}
@@ -155,7 +165,11 @@ const Home = () => {
           </div>
         </div>
         <div className="space">
-        <div className="footer">
+        <motion.div className="footer"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
             <div className="square">
               <h1>Hey There!</h1>
                 <div className="item-one">
@@ -184,7 +198,7 @@ const Home = () => {
                  </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
         </div>
    </div>
 
