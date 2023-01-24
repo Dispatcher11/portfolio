@@ -44,10 +44,13 @@ const Home = () => {
         <p>So naturally I said yes. Since then I’ve spoken at conferences and meet-ups all over the world. It still terrifies me.</p>
         {/* <p><a href="#">Check out my videos and upcoming talks.</a></p> */}
       </div>
-        <div className="item-two">
+        {/* <div className="item-two">
           <img src={speaker} alt="front end" />
           <div className="frame"></div>
-        </div>
+        </div> */}
+            <div className="item-two">
+              <div className="image"></div>
+            </div>
       </div>
         </div>
 
