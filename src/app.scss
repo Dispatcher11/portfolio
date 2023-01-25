@@ -34,6 +34,7 @@ body {
   position: absolute;
   width: 100%;
   z-index: 3;
+  
 }
 
 
@@ -83,6 +84,11 @@ body {
 
   .ul {
     display: flex;
+    ::selection {
+      background: var(--main-dark);
+      color: var(--main-purple);
+      -webkit-text-stroke-color: var(--main-dark);
+    }
   }
 
 
@@ -93,6 +99,15 @@ body {
         color: var(--text-purple);
         font-family: 'Jenthill';
       }
+
+  // .logo {
+  //   width: 130px;
+  //   color: var(--text-purple);
+  //   g {
+  //     background-color: white;
+  //     color: white;
+  //   }
+  // }
 
       ul {
         display: flex;
@@ -272,6 +287,7 @@ body {
   
     width: 100%;
     height: 100vh;
+    overflow-x: hidden;
     background-color: var(--main-turqoise);
     @include lg {
        display: flex;
@@ -421,6 +437,7 @@ body {
 // Projects Section
 
   .projects-section {
+    
     height: auto;
     width: 100%;
     background-color: var(--main-background-dark);
@@ -447,7 +464,6 @@ body {
     
     .flex-container {
       text-align: left;
-
       margin: 0 auto;
       padding-bottom: 150px;
       width: 80%;
@@ -464,7 +480,7 @@ body {
     .item-one {
       background-color: var(--text-white);
       height: 300px;
-      flex-basis: 400px;
+      flex-basis: 450px;
       @include lg {
         flex-grow: 1;
         margin-bottom: 20px;
@@ -476,9 +492,13 @@ body {
       @include sm {
         height: 200px;
       }
-
+      .image1 {
+        background: url('./img/adventure-time.jpg');
+      }
+     .image2 {
+        background: url('./img/iconics.jpg');
+      }
       .image {
-        background: url('./img/websiteimage.png');
         width: 100%;
         height: 100%;
         background-size:cover;
@@ -490,6 +510,7 @@ body {
         transform: translateX(0px) translateY(0px);
         }
       }
+ 
     }
 
     
@@ -515,8 +536,8 @@ body {
         font-family: "MosakExtra";
       }
       h4 {
-        font-size: 21px;
-        font-family: 'MosakLight';
+        font-size: 19px;
+        font-family: 'MosakExtra';
         margin-top: 10px;
         word-spacing: 2px;
       }
@@ -524,7 +545,7 @@ body {
       p {
         font-size: 23px;
         font-family: 'MosakLight';
-        color: var(--text-white);
+        color: var(--text-gray);
         line-height: 30px;
         margin-top: 10px;
       }
@@ -598,6 +619,10 @@ body {
       // background-color: var(--text-white);
       justify-content: space-around;
       flex-wrap: wrap;
+      
+      h4 {
+        font-size: 1.2em;
+      }
 
 
       div {

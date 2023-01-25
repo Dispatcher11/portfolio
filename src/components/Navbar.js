@@ -10,12 +10,10 @@ const Navbar = () => {
     return ( 
       <div className="nav">
 
-        <nav className="nav-bar">
-          {/* <div className="color-one"></div> */}
-          {/* <div className="color-two"></div> */}
+        <nav className="nav-bar  .selection-one">
+
                 <motion.h1 className="logo"drag
       dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}
-      // dragConstraints={{left: 0, top: 0, right: 1400, bottom: 550}}
       dragElastic={.7}>belal</motion.h1>
       <div className="ul">
                 <ul>

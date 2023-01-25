@@ -21,12 +21,12 @@ const Toggle = () => {
 
 
     return ( 
-    <div class="toggle" onClick={() => settoggle(!toggle)}>
-            <input class="toggle-input" type="checkbox" checked={toggle} />
-                <div class="toggle-bg"></div>
-          <div class="toggle-switch">
-               <div class="toggle-switch-figure"></div>
-              <div class="toggle-switch-figureAlt"></div>
+    <div className="toggle" onClick={() => settoggle(!toggle)}>
+            <input className="toggle-input" type="checkbox" checked={toggle} />
+                <div className="toggle-bg"></div>
+          <div className="toggle-switch">
+               <div className="toggle-switch-figure"></div>
+              <div className="toggle-switch-figureAlt"></div>
          </div>  
     </div>
 
