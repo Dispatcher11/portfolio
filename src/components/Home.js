@@ -1,4 +1,6 @@
 import desk from "../img/desk.svg";
+import adventure from "../img/adventure-time.jpg";
+
 import { SiFramer } from 'react-icons/si';
 import { DiBootstrap } from 'react-icons/di';
 import { FaHtml5 } from 'react-icons/fa';
@@ -143,13 +145,28 @@ const Home = () => {
             </motion.div>
       </div>
         </div>
+
+        {/* Projects section */}
  
         <div className="projects-section">
           <h1>Current Projects</h1>
           <motion.div className="flex-container" ref={element2}>
             <motion.div className="item-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible2? "visible" : ''}>
-              <div className="image image1"></div>
+            <div class="slider-wrapper">
+		          <div className="slider image">
+		          	<img id="slide-1" src={adventure} alt=""/>
+		          	<img id="slide-2" src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt=""/>
+		          	<img id="slide-3" src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="" />
+		          </div>
+		          <div className="slider-nav">
+		          	<a href="#slide-1"></a>
+		          	<a href="#slide-2"></a>
+		          	<a href="#slide-3"></a>
+		          </div>
+            </div>
             </motion.div>
+            
+
             <motion.div className="item-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible2? "visible" : ''}>
                 <h3>Adventure Time!</h3>
                 {/* <h4>Wanna have a flashback?</h4> */}
