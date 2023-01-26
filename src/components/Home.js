@@ -15,7 +15,9 @@ import { AiFillLinkedin } from 'react-icons/ai';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { AiOutlineCodepen } from 'react-icons/ai';
 import { DiCss3 } from 'react-icons/di';
+import { RxDoubleArrowDown } from 'react-icons/rx';
 import { RiReactjsLine } from 'react-icons/ri';
+import FontAwesome from 'react-fontawesome'
 
 
 import { useInView } from "react-intersection-observer";
@@ -80,6 +82,28 @@ const hoverVariants = {
   }
 }
 
+const arrowVariants = {
+  hidden: {
+    opacity: 0,
+    y: '-15vh'
+  },
+  visible: {
+    opacity: 1,
+    y: "-10vh",
+    transition: {
+      delay: .5,
+      // duration: .7,
+      type: 'spring',
+      stiffness: 200,
+      mass: 1
+    }
+  },
+  hover : {
+    scale: 1.1,
+    opacity: 1
+  }
+}
+
 
 
 const Home = () => {
@@ -108,6 +132,7 @@ const Home = () => {
       <div className="about-section">
         <div className="flex-container">
       <motion.div className="item-one" variants={containerVariants2} initial="hidden" animate={myElementIsVisible1? "visible" : ''}>
+        {/* <h1><a className="highlight">Frontend Developer</a></h1> */}
         <h1>Frontend Developer</h1>
         <p>I like to craft solid and scalable frontend products with great user experiences.</p> <br />
         <p>So naturally I said yes. Since then I’ve spoken at conferences and meet-ups all over the world. It still terrifies me.</p>
@@ -162,8 +187,12 @@ const Home = () => {
                 </div>
             </motion.div>
           </div>
+          <motion.div whileHover="hover" animate={myElementIsVisible4? "visible" : ''} className="arrows" variants={arrowVariants} initial="hidden">
+          {/* <a href="#"  ref={element4}><RxDoubleArrowDown /></a> */}
+          <h2  ref={element4}><RxDoubleArrowDown /></h2>
+          </motion.div>
 
-          <div className="arsenal"  ref={element4}>
+          <div className="arsenal">
             <motion.h1  >ARSENAL</motion.h1>
             <div className="items">
               <div>
@@ -187,7 +216,7 @@ const Home = () => {
                 <motion.h4 >FRAMER MOTION</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><SiTypescript/></motion.h3>
+                <motion.h3 style={{scale: .9}}  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><SiTypescript/></motion.h3>
                 <motion.h4 >TYPESCRIPT</motion.h4>
               </div>
               <div>
@@ -245,10 +274,10 @@ const Home = () => {
                   <p>I'm available to grab a coffee and chat! Drop a comment, question, concern, or Spotify playlist, and thanks for stopping by!</p>
                   <h3>Find me on these online spaces!</h3>
                   <div className="icons icons1">
-                    <motion.h3 drag dragSnapToOrigin><AiFillGithub /></motion.h3>
-                    <motion.h3 drag dragSnapToOrigin><AiFillLinkedin /></motion.h3>
-                    <motion.h3 drag dragSnapToOrigin><AiOutlineInstagram /></motion.h3>
-                    <motion.h3 drag dragSnapToOrigin><AiOutlineCodepen /></motion.h3>
+                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiFillGithub /></motion.h3>
+                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiFillLinkedin /></motion.h3>
+                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiOutlineInstagram /></motion.h3>
+                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiOutlineCodepen /></motion.h3>
                  </div>
                 </div>
             </motion.div>
