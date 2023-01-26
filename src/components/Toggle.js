@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Howl } from 'howler';
+import sound1 from '../sounds/switchone.mp3';
+import sound2 from '../sounds/switchtwo.mp3';
 
 
-const Toggle = () => {
-   const [toggle, settoggle] = useState(localStorage.getItem('toggle') === "true");
+const Toggle = ({toggle, setToggle}) => {
 
   useEffect(() => {
     const root = document.documentElement;
@@ -19,9 +21,18 @@ const Toggle = () => {
     localStorage.setItem('toggle', toggle);
   }, [toggle]);
 
+  const soundSrc = toggle ? sound1 : sound2;
 
+  const callMySound = (src) => {
+    const sound = new Howl({
+      src,
+      html5: true,
+    });
+    sound.play();
+  }
     return ( 
-    <div className="toggle" onClick={() => settoggle(!toggle)}>
+     <span onClick={() => callMySound(soundSrc)}>
+    <div className="toggle" onClick={() => setToggle(!toggle)}>
             <input className="toggle-input" type="checkbox" checked={toggle} />
                 <div className="toggle-bg"></div>
           <div className="toggle-switch">
@@ -29,6 +40,7 @@ const Toggle = () => {
               <div className="toggle-switch-figureAlt"></div>
          </div>  
     </div>
+    </span>
 
      );
 }

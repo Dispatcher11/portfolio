@@ -1,6 +1,5 @@
 import desk from "../img/desk.svg";
-import adventure from "../img/adventure-time.jpg";
-
+import desk2 from "../img/desk2.svg";
 import { SiFramer } from 'react-icons/si';
 import { DiBootstrap } from 'react-icons/di';
 import { FaHtml5 } from 'react-icons/fa';
@@ -108,7 +107,7 @@ const arrowVariants = {
 
 
 
-const Home = () => {
+const Home = ({toggle}) => {
   const {ref: element1, inView: myElementIsVisible1} = useInView();
   const {ref: element2, inView: myElementIsVisible2} = useInView();
   const {ref: element3, inView: myElementIsVisible3} = useInView();
@@ -123,7 +122,8 @@ const Home = () => {
       <div className="hero-section">
  
         <div className="container-one selection-transparent">
-          <img src={desk} id="svg" alt="desk" />
+         {toggle && <img src={desk} id="svg" alt="desk" />}
+          { !toggle && <img src={desk2} id="svg" alt="desk" />}
         </div>
         <div className="container-two selection-one">
           {/* <p>Hi, I'm Belal</p> */}
@@ -146,27 +146,14 @@ const Home = () => {
       </div>
         </div>
 
-        {/* Projects section */}
+        {/* Projects */}
  
         <div className="projects-section">
           <h1>Current Projects</h1>
           <motion.div className="flex-container" ref={element2}>
             <motion.div className="item-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible2? "visible" : ''}>
-            <div class="slider-wrapper">
-		          <div className="slider image">
-		          	<img id="slide-1" src={adventure} alt=""/>
-		          	<img id="slide-2" src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt=""/>
-		          	<img id="slide-3" src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="" />
-		          </div>
-		          <div className="slider-nav">
-		          	<a href="#slide-1"></a>
-		          	<a href="#slide-2"></a>
-		          	<a href="#slide-3"></a>
-		          </div>
-            </div>
+              <div className="image image1"></div>
             </motion.div>
-            
-
             <motion.div className="item-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible2? "visible" : ''}>
                 <h3>Adventure Time!</h3>
                 {/* <h4>Wanna have a flashback?</h4> */}
@@ -233,7 +220,7 @@ const Home = () => {
                 <motion.h4 >FRAMER MOTION</motion.h4>
               </div>
               <div>
-                <motion.h3 style={{scale: .9}}  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><SiTypescript/></motion.h3>
+                <motion.h3 style={{scale: .9}}  dragSnapToOrigin drag whileHover={{scale: 1.1}}><SiTypescript/></motion.h3>
                 <motion.h4 >TYPESCRIPT</motion.h4>
               </div>
               <div>
