@@ -1,11 +1,12 @@
+import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Howl } from 'howler';
-import sound1 from '../sounds/switchone.mp3';
-import sound2 from '../sounds/switchtwo.mp3';
+import { SoundContext } from "../contexts/SoundContext";
 
 
-const Toggle = ({toggle, setToggle}) => {
+const Toggle = () => {
+
+  const { toggle, setToggle, callMySound, soundSrc } = useContext(SoundContext);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -18,18 +19,10 @@ const Toggle = ({toggle, setToggle}) => {
     root?.style.setProperty("--text-gray", toggle ? "#E0E0E0" : "#2C2A32");
     root?.style.setProperty("--scrollbar", toggle ? "#2C2A32" : "#FFFCE0");
     
-    localStorage.setItem('toggle', toggle);
   }, [toggle]);
 
-  const soundSrc = toggle ? sound1 : sound2;
 
-  const callMySound = (src) => {
-    const sound = new Howl({
-      src,
-      html5: true,
-    });
-    sound.play();
-  }
+  
     return ( 
      <span onClick={() => callMySound(soundSrc)}>
     <div className="toggle" onClick={() => setToggle(!toggle)}>

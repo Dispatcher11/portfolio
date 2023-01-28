@@ -24,6 +24,7 @@ import FontAwesome from 'react-fontawesome'
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import Desk from "./desk";
 
 const containerVariants = {
   hidden: {
@@ -78,8 +79,25 @@ const footerVariants = {
 }
 
 const hoverVariants = {
+  hidden: {
+    opacity: 0,
+    // y: '10vh'
+  },
+  visible: {
+    opacity: 1,
+    scale: [1, 1.2, 1],
+    // y: 0,
+    transition: {
+      delay: .3,
+      duration: .7,
+      // type: 'tween',
+      // stiffness: 200,
+      // mass: .6
+    }
+},
   hover : {
-    scale: 1.2,
+    scaleX: 1.2,
+    scaleY: 1.2,
   }
 }
 
@@ -107,12 +125,15 @@ const arrowVariants = {
 
 
 
-const Home = ({toggle}) => {
+const Home = () => {
   const {ref: element1, inView: myElementIsVisible1} = useInView();
   const {ref: element2, inView: myElementIsVisible2} = useInView();
   const {ref: element3, inView: myElementIsVisible3} = useInView();
   const {ref: element4, inView: myElementIsVisible4} = useInView();
+  const {ref: element5, inView: myElementIsVisible5} = useInView();
   const {ref: footer, inView: myFooterInView} = useInView();
+
+
 
     return ( 
       <div className="home">
@@ -122,22 +143,26 @@ const Home = ({toggle}) => {
       <div className="hero-section">
  
         <div className="container-one selection-transparent">
-         {toggle && <img src={desk} id="svg" alt="desk" />}
-          { !toggle && <img src={desk2} id="svg" alt="desk" />}
+         {/* {toggle && <img src={desk} id="svg" alt="desk" />}
+          { !toggle && <img src={desk2} id="svg" alt="desk" />} */}
+          <Desk />
         </div>
-        <div className="container-two selection-one">
+
+        <motion.div className="container-two selection-one" variants={containerVariants2} initial="hidden" animate="visible">
           {/* <p>Hi, I'm Belal</p> */}
           <h1>I like making <span>fun</span>, interactive things with code. I also  <span>talk</span> & <span>write</span> about those things.</h1>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="about-section">
+      <div className="about-section" id="about">
         <div className="flex-container">
       <motion.div className="item-one" variants={containerVariants2} initial="hidden" animate={myElementIsVisible1? "visible" : ''}>
         {/* <h1><a className="highlight">Frontend Developer</a></h1> */}
         <h1>Frontend Developer</h1>
-        <p>I like to craft solid and scalable frontend products with great user experiences.</p> <br />
-        <p>So naturally I said yes. Since then I’ve spoken at conferences and meet-ups all over the world. It still terrifies me.</p>
+        <p>I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, but I design. Immersed in stylesheets tweaking font sizes and contemplating layouts is where you'll find me (~_^).</p> <br />
+        <p>I'm committed to creating fluent user experiences while staying fashionable.
+
+</p>
         {/* <p><a href="#">Check out my videos and upcoming talks.</a></p> */}
       </motion.div>
             <motion.div className="item-two" variants={containerVariants} initial="hidden" animate={myElementIsVisible1? "visible" : ''}>
@@ -148,7 +173,7 @@ const Home = ({toggle}) => {
 
         {/* Projects */}
  
-        <div className="projects-section">
+        <div className="projects-section" id="projects">
           <h1>Current Projects</h1>
           <motion.div className="flex-container" ref={element2}>
             <motion.div className="item-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible2? "visible" : ''}>
@@ -196,51 +221,51 @@ const Home = ({toggle}) => {
           <h2  ref={element4}><RxDoubleArrowDown /></h2>
           </motion.div>
 
-          <div className="arsenal">
+          <div className="arsenal" id="arsenal">
             <motion.h1  >ARSENAL</motion.h1>
-            <div className="items">
+            <div className="items" ref={element5}>
               <div>
-                <motion.h3 dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><FaHtml5 /></motion.h3>
-                <motion.h4  >HTML5</motion.h4>
+                <motion.h3 dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><FaHtml5 /></motion.h3>
+                <h4  >HTML5</h4>
               </div>
               <div>
-                <motion.h3 dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><DiCss3 /></motion.h3>
+                <motion.h3 dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><DiCss3 /></motion.h3>
                 <motion.h4 >CSS</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><DiJavascript /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><DiJavascript /></motion.h3>
                 <motion.h4 >JAVASCRIPT</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><SiSass /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><SiSass /></motion.h3>
                 <motion.h4 >SASS</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><SiFramer /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><SiFramer /></motion.h3>
                 <motion.h4 >FRAMER MOTION</motion.h4>
               </div>
               <div>
-                <motion.h3 style={{scale: .9}}  dragSnapToOrigin drag whileHover={{scale: 1.1}}><SiTypescript/></motion.h3>
+                <motion.h3 variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''}  dragSnapToOrigin drag whileHover={{scaleX: 1.1, scaleY: 1.1}}><SiTypescript/></motion.h3>
                 <motion.h4 >TYPESCRIPT</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><DiReact /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><DiReact /></motion.h3>
                 <motion.h4 >REACT</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><SiFirebase /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><SiFirebase /></motion.h3>
                 <motion.h4 >FIREBASE</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><DiGit /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><DiGit /></motion.h3>
                 <motion.h4 >GIT</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><DiTerminal /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><DiTerminal /></motion.h3>
                 <motion.h4 >TERMINAL</motion.h4>
               </div>
               <div>
-                <motion.h3  dragSnapToOrigin drag variants={hoverVariants} whileHover="hover"><BiDevices /></motion.h3>
+                <motion.h3  dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><BiDevices /></motion.h3>
                 <motion.h4 >RESPONSIVE</motion.h4>
               </div>
               <div>
@@ -251,7 +276,7 @@ const Home = ({toggle}) => {
             </div>
           </div>
         </div>
-        <div className="space"  ref={footer}>
+        <div className="space" ref={footer}>
         <motion.div className="footer"
             variants={containerVariants}
             initial="hidden"
@@ -278,15 +303,16 @@ const Home = ({toggle}) => {
                   <p>I'm available to grab a coffee and chat! Drop a comment, question, concern, or Spotify playlist, and thanks for stopping by!</p>
                   <h3>Find me on these online spaces!</h3>
                   <div className="icons icons1">
-                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiFillGithub /></motion.h3>
-                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiFillLinkedin /></motion.h3>
-                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiOutlineInstagram /></motion.h3>
-                    <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><AiOutlineCodepen /></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="www.google.com"><AiFillGithub /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="linkedin.com"><AiFillLinkedin /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="instagram.com"><AiOutlineInstagram /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="codepen.com"><AiOutlineCodepen /></a></motion.h3>
                  </div>
                 </div>
             </motion.div>
         </motion.div>
         </div>
+        <span id="contact"></span>
    </div>
 
      );

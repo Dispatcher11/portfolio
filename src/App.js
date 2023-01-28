@@ -4,14 +4,17 @@ import './app.scss';
 import Footer from './components/Footer';
 import { useState } from 'react';
 
-function App() {
-  const [toggle, setToggle] = useState(localStorage.getItem('toggle') === "true");
+import SoundContextProvider from './contexts/SoundContext';
 
+function App() {
+
+  
   return (
     <div className="App">
-      <Navbar toggle={toggle} setToggle={setToggle} />
-     <Home toggle={toggle} />
-     {/* <Footer /> */}
+      <SoundContextProvider>
+      <Navbar/>
+     <Home/>
+     </SoundContextProvider>
     </div>
   );
 }
