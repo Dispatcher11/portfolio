@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { useContext } from "react";
 import { SoundContext } from "../contexts/SoundContext";
 
@@ -12,6 +13,22 @@ const windowVariants = {
         scale: 1,
 		transition: {
 			delay: 2,
+			type: 'spring',
+			stiffness: 280,
+			mass: .6
+		  }
+    }
+}
+const windowVariants2 = {
+    hidden: {
+        opacity: 0,
+        scale: 0
+    },
+    visible: {
+        opacity: 1,
+        scale: 1,
+		transition: {
+			delay: .2,
 			type: 'spring',
 			stiffness: 280,
 			mass: .6
@@ -50,15 +67,18 @@ const opacityVariants = {
 	}
 }
 
-
-
-
 const Desk = () => {
     const { toggle, setToggle, callMySound, soundSrc } = useContext(SoundContext);
     const click = () => {
       callMySound(soundSrc);
       setToggle(!toggle);
     }
+	const [scrolled, setScrolled] = useState(false);
+
+	window.onscroll = function (e) {  
+		setScrolled(true);
+		// console.log(document.documentElement.scrollTop);
+		};
 
     return ( 
 <svg id="Layer_1" style={{"enableBackground":"new 0 0 1080 1080"}} version="1.1" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlSpace="preserve">
@@ -68,6 +88,7 @@ const Desk = () => {
 	</g>
 	<g transform="matrix(2.19 0 0 2.19 561.57 540)">
 		<g>
+		<motion.g initial={{y: "-100vh", x: "0vw", rotate: "0deg"}} animate={{y: 0, x: 0, rotate: 0}} transition={{delay: 1, duration: .8, type: "tween"}}>
 			<g transform="matrix(1 0 0 1 -161.44 -23.45)">
 				<path className="st1" d="M-4.8,1c1.3,5.6,4.1,10.8,8,15C5.2,10.6,5.8,4.7,4.8-1     c-1.3-5.6-4-10.8-8-15C-5.2-10.6-5.8-4.7-4.8,1z" vectorEffect="non-scaling-stroke"/>
 			</g>
@@ -101,6 +122,8 @@ const Desk = () => {
 			<g transform="matrix(1 0 0 1 -157.57 14.69)">
 				<path className="st7" d="M-11.7-8.7C-12-7.6-12.1-6.4-12-5.3c0.1,0.5,0.9,0.5,0.8,0     c-0.1-1.1-0.1-2.1,0.2-3.2c0-0.2-0.1-0.4-0.3-0.5S-11.7-8.9-11.7-8.7z M-11.2-3.6c0.2,0,0.4-0.2,0.4-0.4c0-0.2-0.2-0.4-0.4-0.4     s-0.4,0.2-0.4,0.4C-11.6-3.8-11.4-3.6-11.2-3.6z M9.6,5c-0.2,0.7-0.4,1.8,0.6,2.2c0.9,0.3,1.4-0.5,1.5-1.2c0.1-0.8-0.3-1.6-1-1.9     c-0.4-0.1-0.9,0.1-1.1,0.5C9.5,4.6,9.4,4.8,9.4,4.9c-0.1,0.2,0,0.5,0,0.7c-0.1,0.4,0.2,0.9,0.6,1c0.4,0.1,0.9-0.1,1-0.6     c0-0.2,0-0.3,0-0.5V5.3c0-0.2-0.1-0.2-0.3,0.3h-0.4C10,5.5,9.9,5.4,10.1,5.7c0.1,0.3-0.3,0,0.3-0.1h0.4c0.2,0.1,0.3,0.8,0.4,0.2     c0-0.1,0-0.3,0.1-0.4C11.5,4.4,9.9,3.9,9.6,5L9.6,5z M11.2,3.7c0.5,0,0.8-0.4,0.8-0.8c0-0.5-0.4-0.8-0.8-0.8s-0.8,0.4-0.8,0.8     C10.4,3.4,10.8,3.7,11.2,3.7z M11,8.9c0.5,0,0.8-0.4,0.8-0.8S11.4,7.3,11,7.3s-0.8,0.4-0.8,0.8S10.5,8.9,11,8.9z" vectorEffect="non-scaling-stroke"/>
 			</g>
+			</motion.g>
+			<motion.g initial={{y: "-100vh"}} animate={{y: 0}} transition={{delay: 1, duration: .7, type: "tween"}}>
 			<g transform="matrix(1 0 0 1 -118.44 13.39)">
 				<path className="st2" d="M-0.1,19.2l9.6-34.5c0.1-0.4,0.1-0.8-0.1-1.2s-0.6-0.6-1-0.7l-6.4-2     c-0.4-0.2-0.8-0.2-1.2,0s-0.6,0.5-0.7,0.9l-9.6,34.5c-0.1,0.2,0,0.5,0.3,0.6c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.2-0.2,0.2-0.3     l0.1-0.4l7.9,2.4" vectorEffect="non-scaling-stroke"/>
 			</g>
@@ -116,8 +139,10 @@ const Desk = () => {
 			<g id="BOOKS" transform="matrix(1 0 0 1 -112.61 2.93)">
 				<polygon className="st11" points="-2.1,1.2 0.9,2.2 0.7,0.2 2.1,-1.2 -1.1,-2.2    " vectorEffect="non-scaling-stroke"/>
 			</g>
+			</motion.g>
+			<motion.g initial={{y: "-100vh"}} animate={{y: 0}} transition={{delay: .8, duration: .7, type: "tween"}}>
 			<g id="BOOKS_00000175285301045302723780000012834520345054180796_" transform="matrix(1 0 0 1 -92.55 8.07)">
-				<polyline className="st12" points="-5.6,24.9 -5.6,-24.9 5.6,-24.9 5.6,24.9    " vectorEffect="non-scaling-stroke"/>
+				<motion.polyline className="st12" points="-5.6,24.9 -5.6,-24.9 5.6,-24.9 5.6,24.9    " vectorEffect="non-scaling-stroke"/>
 			</g>
 			<g id="BOOKS_00000004548072878665264780000004032571971750196396_" transform="matrix(1 0 0 1 -92.54 -9.6)">
 				<rect className="st2" height="1.8" width="11.2" vectorEffect="non-scaling-stroke" x="-5.6" y="-0.9"/>
@@ -125,6 +150,8 @@ const Desk = () => {
 			<g id="BOOKS_00000001652582996886360610000005339211712140787129_" transform="matrix(1 0 0 1 -92.54 -7)">
 				<rect className="st2" height="1.8" width="11.2" vectorEffect="non-scaling-stroke" x="-5.6" y="-0.9"/>
 			</g>
+			</motion.g>
+			<motion.g initial={{y: "-100vh"}} animate={{y: 0}} transition={{delay: .9, duration: .7, type: "tween"}}>
 			<g id="BOOKS_00000037680235909877239910000013604162107499866497_" transform="matrix(1 0 0 1 -103.56 10.25)">
 				<polyline className="st13" points="-5.3,22.7 -5.3,-22.7 5.3,-22.7 5.3,22.7    " vectorEffect="non-scaling-stroke"/>
 			</g>
@@ -134,6 +161,7 @@ const Desk = () => {
 			<g id="BOOKS_00000106831751801142540430000001350553558068303028_" transform="matrix(1 0 0 1 -103.56 0.63)">
 				<rect className="st14" height="1.6" width="10.6" vectorEffect="non-scaling-stroke" x="-5.3" y="-0.8"/>
 			</g>
+			</motion.g>
 			<g transform="matrix(1 0 0 1 97.79 142.63)">
 				<path className="st15" d="M7.3,2.5H-7.2C-9.1-4.1,9.1-4.2,7.3,2.5z" vectorEffect="non-scaling-stroke"/>
 			</g>
@@ -146,9 +174,11 @@ const Desk = () => {
 			<g id="mouse" transform="matrix(1 0 0 1 97.78 145.49)">
 				<path className="st18" d="M-12.5-0.4h24.9c0.2,0,0.3,0.1,0.3,0.3v0.2c0,0.2-0.1,0.3-0.3,0.3     h-24.9c-0.2,0-0.3-0.1-0.3-0.3v-0.2C-12.8-0.3-12.6-0.4-12.5-0.4z" vectorEffect="non-scaling-stroke"/>
 			</g>
+			<motion.g initial={{x: "-100vh"}} animate={{x: 0}} transition={{delay: .7, duration: .7, type: "spring", stiffness: 120, mass: .4}}>
 			<g id="shelf" transform="matrix(1 0 0 1 -127.17 34.1)">
 				<rect className="st19" height="4.2" width="99.8" vectorEffect="non-scaling-stroke" x="-49.9" y="-2.1"/>
 			</g>
+			</motion.g>
 			<g transform="matrix(1 0 0 1 -17.91 -112.95)">
 				<path className="st20" d="M11.8,0c0,7.1-5.3,12.9-11.8,12.9c-6.5,0-11.7-5.8-11.7-12.9     S-6.5-12.9,0-12.9C6.5-12.9,11.8-7.1,11.8,0z" vectorEffect="non-scaling-stroke"/>
 			</g>
@@ -215,19 +245,19 @@ const Desk = () => {
 	<g id="website">
 		<rect height="87.8" width="52.47" fill="#f0f0f2" rx="3.57" x="133.88" y="270"/>
 		<rect height="28.15" width="40.59" fill="#f2c5c2" rx="3.22" x="139.83" y="275.67"/>
-		<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1}} fill="none" opacity=".68" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="144.8" x2="161.56" y1="299.31" y2="299.31"/>
-		<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: .95}} fill="none" opacity=".68" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="144.8" x2="169.32" y1="294.69" y2="294.69"/>
-		<motion.path variants={windowVariants} initial="hidden" transition={{delay: .9}} animate="visible" style={{"mixBlendMode":"overlay"}} d="M154.57 284.27a5.58 5.58 0 11-5.58-5.35 5.46 5.46 0 015.58 5.35z" fill="#fff" opacity=".48"/>
+		<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .4}} fill="none" opacity=".68" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="144.8" x2="161.56" y1="299.31" y2="299.31"/>
+		<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .3}} fill="none" opacity=".68" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="144.8" x2="169.32" y1="294.69" y2="294.69"/>
+		<motion.path variants={windowVariants2} initial="hidden"  animate={ scrolled ? "visible" : "hidden" } style={{"mixBlendMode":"overlay"}} d="M154.57 284.27a5.58 5.58 0 11-5.58-5.35 5.46 5.46 0 015.58 5.35z" fill="#fff" opacity=".48"/>
 		<g>
 			<rect height="49.32" width="37.69" fill="#bdc0f4" rx="3.34" x="139.83" y="308.41"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.7}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="163.05" y1="348.39" y2="348.39"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.65}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="168.46" y1="343.39" y2="343.39"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.6}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="163.05" y1="338.39" y2="338.39"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.5}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="157.69" y1="333.39" y2="333.39"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.4}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="163.05" y1="328.77" y2="328.77"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.3}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="168.46" y1="323.91" y2="323.91"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.2}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="172.42" y1="318.62" y2="318.62"/>
-			<motion.line variants={opacityVariants} initial="hidden" animate="visible" transition={{delay: 1.1}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="168.46" y1="313.32" y2="313.32"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: 1.1}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="163.05" y1="348.39" y2="348.39"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: 1}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="168.46" y1="343.39" y2="343.39"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .95}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="163.05" y1="338.39" y2="338.39"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .9}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="157.69" y1="333.39" y2="333.39"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .8}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="163.05" y1="328.77" y2="328.77"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .7}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="168.46" y1="323.91" y2="323.91"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .6}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="172.42" y1="318.62" y2="318.62"/>
+			<motion.line variants={opacityVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" } transition={{delay: .5}} fill="none" opacity=".81" stroke="#fff" strokeLinecap="round" strokeWidth="1.2" x1="146.12" x2="168.46" y1="313.32" y2="313.32"/>
 		</g>
 
 	</g>
@@ -306,8 +336,8 @@ const Desk = () => {
 				</g>
 			</g>
              {/* Lines start */}
-        <motion.g initial="hidden" animate="visible">
-			<motion.g variants={widthVariants} transition={{delay: 1, duration: .9}}>
+        <motion.g initial="hidden" animate={ scrolled ? "visible" : "hidden" }>
+			<motion.g variants={widthVariants} transition={{delay: .7, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000008866688838130603100000017718271304592527270_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -318,7 +348,7 @@ const Desk = () => {
 					<rect className="st44" height="3.1" width="71" vectorEffect="non-scaling-stroke" x="-35.5" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.1, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: .8, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000102535096149015356440000010075432197329224341_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -329,7 +359,7 @@ const Desk = () => {
 					<rect className="st46" height="3.1" width="75.6" vectorEffect="non-scaling-stroke" x="-37.8" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.2, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: .9, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000030459021416546375950000013252467186578115242_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -340,7 +370,7 @@ const Desk = () => {
 					<rect className="st48" height="3.1" width="61.6" vectorEffect="non-scaling-stroke" x="-30.8" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.3, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000183242032856894569160000003864136375246257852_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -351,7 +381,7 @@ const Desk = () => {
 					<rect className="st50" height="3.1" width="52.7" vectorEffect="non-scaling-stroke" x="-26.3" y="-1.5"/>
 				</g>
         </motion.g>
- 			<motion.g variants={widthVariants} transition={{delay: 1.4, duration: .9}}>
+ 			<motion.g variants={widthVariants} transition={{delay: 1.1, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000170267368249192094600000017727847311536349063_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -362,7 +392,7 @@ const Desk = () => {
 					<rect className="st52" height="3.1" width="43.7" vectorEffect="non-scaling-stroke" x="-21.8" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.5, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.2, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000113334367487595615910000005174261489006719409_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -373,7 +403,7 @@ const Desk = () => {
 					<rect className="st54" height="3.1" width="73.1" vectorEffect="non-scaling-stroke" x="-36.5" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.6, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.3, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000174569005434180273490000000427747360769914755_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -384,7 +414,7 @@ const Desk = () => {
 					<rect className="st56" height="3.1" width="85.7" vectorEffect="non-scaling-stroke" x="-42.9" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.7, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.4, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000110434774904011965910000018182724726964906927_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -395,7 +425,7 @@ const Desk = () => {
 					<rect className="st58" height="3.1" width="71.5" vectorEffect="non-scaling-stroke" x="-35.8" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.8, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.5, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000182504004813180178200000014570331771194527639_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -406,7 +436,7 @@ const Desk = () => {
 					<rect className="st60" height="3.1" width="67.5" vectorEffect="non-scaling-stroke" x="-33.8" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 1.9, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.6, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000008137389799883866450000012177355751989452442_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -417,7 +447,7 @@ const Desk = () => {
 					<rect className="st62" height="3.1" width="32.1" vectorEffect="non-scaling-stroke" x="-16" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 2, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.7, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000084521734187395912060000012880249985573408907_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -428,7 +458,7 @@ const Desk = () => {
 					<rect className="st64" height="3.1" width="93.5" vectorEffect="non-scaling-stroke" x="-46.7" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 2.1, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.8, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000128481030164355460440000017425665608194441099_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -439,7 +469,7 @@ const Desk = () => {
 					<rect className="st66" height="3.1" width="67.5" vectorEffect="non-scaling-stroke" x="-33.8" y="-1.5"/>
 				</g>
 			</motion.g>
-			<motion.g variants={widthVariants} transition={{delay: 2.2, duration: .9}}>
+			<motion.g variants={widthVariants} transition={{delay: 1.9, duration: .9}}>
 				<defs>
 					<rect height="209.7" id="SVGID_00000055671208706157892330000000624641115276063149_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>
@@ -452,7 +482,7 @@ const Desk = () => {
 			</motion.g>
        </motion.g>
             {/* Lines End */}
-            <motion.g variants={windowVariants} initial="hidden" animate="visible">
+            <motion.g variants={windowVariants} initial="hidden" animate={ scrolled ? "visible" : "hidden" }>
 			<g>
 				<defs>
 					<rect height="209.7" id="SVGID_00000150792564494447130840000014883169700731803285_" width="403.6" x="-168.5" y="-51.1"/>
@@ -516,11 +546,11 @@ const Desk = () => {
 				<clipPath id="SVGID_00000158743101332037790460000014055144494510433977_">
 					<rect height="209.7" style={{"overflow":"visible"}} width="403.6" x="-168.5" y="-51"/>
 				</clipPath>
-				<motion.g initial={{opacity: 0}} transition={{delay: 2.1}} animate={{opacity: 1}} style={{"clipPath":"url(#SVGID_00000158743101332037790460000014055144494510433977_)"}} transform="matrix(1 0 0 1 77.7 66.4)">
+				<motion.g initial={{opacity: 0}} transition={{delay: 2.1}} animate={ scrolled ? {opacity: 1} : {opacity: 0} } style={{"clipPath":"url(#SVGID_00000158743101332037790460000014055144494510433977_)"}} transform="matrix(1 0 0 1 77.7 66.4)">
 					<path className="st76" d="M-0.8,2c-0.1,0-0.2,0-0.3-0.1c-0.1-0.1-0.1-0.2-0.1-0.3s0-0.2,0.1-0.3      L0.2,0l-1.4-1.3c-0.1-0.1-0.1-0.2-0.1-0.3s0-0.2,0.1-0.3C-1-1.9-0.9-2-0.8-2c0.1,0,0.2,0,0.3,0.1l1.7,1.6C1.2-0.2,1.2-0.1,1.2,0      c0,0.1,0,0.2-0.1,0.3l-1.7,1.6C-0.6,1.9-0.7,2-0.8,2z" vectorEffect="non-scaling-stroke"/>
 				</motion.g>
 			</g>
-			<motion.g variants={windowVariants} transition={{delay: 2}} initial="hidden" animate="visible">
+			<motion.g variants={windowVariants} transition={{delay: 2}} initial="hidden" animate={ scrolled ? "visible" : "hidden" }>
 				<defs>
 					<rect height="209.7" id="SVGID_00000035518033331834917350000009081568889596101801_" width="403.6" x="-168.5" y="-51.1"/>
 				</defs>

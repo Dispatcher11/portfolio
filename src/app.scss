@@ -586,7 +586,7 @@ body {
    
 
     .flex-container {
-     width: 75%;
+     width: 68%;
      height: 100%;
     //  background-color: gray;
      margin: auto;
@@ -605,7 +605,7 @@ body {
     }
 
     .item-one {
-      width: 500px;
+      width: 540px;
       height: 300px;
       // background-color: blue;
       text-align: left;
@@ -638,10 +638,15 @@ body {
     //  }
 
       p {
-        font-size: 20px;
+        font-size: 17.4px;
         line-height: 30px;
-        font-family: "MosakLight";
+        word-spacing: 2px;
+        font-family: "Work Sans";
+        font-weight: 400;
+        padding-bottom: 10px;
       }
+
+
 
      @include breakpoint(1100px) {
       padding-right: 40px;
@@ -897,7 +902,8 @@ body {
 
       h2 {
         @include sm {
-          transform: translateY(40px);
+          transform: translateY(330px);
+          margin-top: 30px;
         }
         font-size: 50px;
         // color: var(--text-gray);
@@ -1228,3 +1234,5 @@ body {
 	}
 
 }
+
+
