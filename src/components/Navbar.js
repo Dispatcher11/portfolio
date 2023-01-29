@@ -9,6 +9,8 @@ import { CgProfile } from 'react-icons/cg';
 import { CgUnsplash } from 'react-icons/cg';
 import { useContext } from "react";
 import { SoundContext } from "../contexts/SoundContext";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const svgVariants = {
   hidden: {
@@ -39,12 +41,13 @@ const dropdownVaraints = {
     }
   }
 }
-const Navbar = () => {
+const Navbar = ({scrollDir}) => {
+console.log(scrollDir);
 
     return ( 
       <div className="nav">
  
-        <motion.nav className="nav-bar  .selection-one" variants={dropdownVaraints} initial="hidden" animate="visible">
+        <motion.nav className="nav-bar .selection-one" variants={dropdownVaraints} initial="hidden" animate="visible">
         <motion.h1 className="logo"drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}
       dragElastic={.7} >belal</motion.h1>
         {/* <svg version="1.1" id="Layer_1" x="0px" y="0px"viewBox="0 0 1366 768"  className="logo"> */}
@@ -62,7 +65,7 @@ const Navbar = () => {
               </div>
         </motion.nav>
 
-        <nav className="mobile-nav">
+        <motion.nav initial={{y: "70px"}} animate={(scrollDir)? {y: -1}: {y: "70px"}} className="mobile-nav"  id="navbar">
              <ul>
                   <li><a href="#about">
                   <h3><CgProfile /></h3>
@@ -78,7 +81,7 @@ const Navbar = () => {
                   <h4><AiOutlineMessage /></h4>
                   contact</a></li>
              </ul>
-        </nav>
+        </motion.nav>
       </div>
 
      );

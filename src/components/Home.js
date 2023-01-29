@@ -250,7 +250,7 @@ const Home = () => {
           </motion.div>
 
           <div className="arsenal" id="arsenal">
-            <motion.h1  >ARSENAL</motion.h1>
+            <motion.h1>ARSENAL</motion.h1>
             <div className="items" ref={element5}>
               <div>
                 <motion.h3 dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><FaHtml5 /></motion.h3>
@@ -315,7 +315,7 @@ const Home = () => {
                 <div className="item-one">
                     <input type="name" placeholder="Name" />
                     <input type="email" placeholder="Email" />
-                    <textarea placeholder="Let’s build something together!" cols="30" rows={(window.innerWidth > 700) ? "9" : "6"}></textarea>
+                    <textarea placeholder="Let’s build something together!" cols="30" rows={(window.innerWidth > 700) ? "9" : "5"}></textarea>
                     <div className="btn">
                       <div>SEND IT!</div>
                     </div>
