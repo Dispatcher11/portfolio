@@ -75,7 +75,7 @@ const Desk = () => {
     }
 	const [scrolled, setScrolled] = useState(false);
 
-	window.onscroll = function (e) {  
+		window.onscroll = function (e) {  
 		setScrolled(true);
 		// console.log(document.documentElement.scrollTop);
 		};

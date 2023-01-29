@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import Toggle from "./Toggle";
 import { TiPencil } from 'react-icons/ti';
-import { BiMicrophone } from 'react-icons/bi';
+import { AiOutlineMessage } from 'react-icons/ai';
 import { AiOutlineStar } from 'react-icons/ai';
 import { RxRocket } from 'react-icons/rx';
+import { CgProfile } from 'react-icons/cg';
+import { CgUnsplash } from 'react-icons/cg';
 import { useContext } from "react";
 import { SoundContext } from "../contexts/SoundContext";
 
@@ -63,18 +65,18 @@ const Navbar = () => {
         <nav className="mobile-nav">
              <ul>
                   <li><a href="#about">
-                  <h3><TiPencil /></h3>
-                    writing</a></li>
-                  <li><a href="#about">
-                  <h4><BiMicrophone /></h4>
-                    speaking</a></li>
-                  
-                  <li><a href="#about">
-                  <h4><AiOutlineStar /></h4>
-                    workshop</a></li>
-                  <li><a href="#work">
+                  <h3><CgProfile /></h3>
+                  about</a></li>
+                  <li><a href="#projects">
                   <h4><RxRocket /></h4>
-                    playing</a></li>
+                  projects</a></li>
+                  
+                  <li><a href="#arsenal">
+                  <h4><AiOutlineStar /></h4>
+                  arsenal</a></li>
+                  <li><a href="#contact">
+                  <h4><AiOutlineMessage /></h4>
+                  contact</a></li>
              </ul>
         </nav>
       </div>

@@ -162,7 +162,7 @@ const Home = () => {
         <div className="flex-container">
       <motion.div className="item-one" variants={containerVariants2} initial="hidden" animate={myElementIsVisible1? "visible" : ''}>
         {/* <h1><a className="highlight">Frontend Developer</a></h1> */}
-        <h1>Frontend Developer</h1>
+        <h1>Frontend <br /> Developer</h1>
         <p>I craft scalable front-end products with great user experiences while staying fashionable. </p>
         <p>In building JavaScript applications, I'm equipped with the right tools, and can absolutely function independently of them to deliver fast.</p> 
         {/* <p><a href="#">Check out my videos and upcoming talks.</a></p> */}
@@ -175,7 +175,7 @@ const Home = () => {
 
         {/* Projects */}
  
-        <div className="projects-section" id="projects">
+        <div className="projects-section" id="projects"  ref={footer}>
           <h1>Projects</h1>
 
           <motion.div className="flex-container" ref={element2}>
@@ -304,18 +304,18 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="space" ref={footer}>
+        <div className="space">
         <motion.div className="footer"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
         >
-            <motion.div className="square" variants={footerVariants} initial="hidden" animate={myFooterInView? "visible" : ''} >
-              <motion.h1 drag dragSnapToOrigin>Hey There!</motion.h1>
+            <motion.div className="square" variants={footerVariants} initial="hidden" animate={!myFooterInView? "visible" : ''} >
+              <motion.h1>Hey There!</motion.h1>
                 <div className="item-one">
                     <input type="name" placeholder="Name" />
                     <input type="email" placeholder="Email" />
-                    <textarea placeholder="Let’s build something together!" cols="30" rows="9"></textarea>
+                    <textarea placeholder="Let’s build something together!" cols="30" rows={(window.innerWidth > 700) ? "9" : "6"}></textarea>
                     <div className="btn">
                       <div>SEND IT!</div>
                     </div>
@@ -327,14 +327,16 @@ const Home = () => {
                  </div>
                 </div>
                 <div className="item-two">
-                  <p>If you have any questions about me or my projects, or argue about the best albums and movies of the 90s, I'm the guy!</p>
-                  <p>I'm available to grab a coffee and chat! Drop a comment, question, concern, or Spotify playlist, and thanks for stopping by!</p>
+                  <p>I'm available to grab a coffee and chat! 
+Drop a comment, if you got a question, concern,
+or Spotify playlist, and thanks for stopping by!</p>
+                  {/* <p>I'm available to grab a coffee and chat! Drop a comment, question, concern, or Spotify playlist, and thanks for stopping by!</p> */}
                   <h3>Find me on these online spaces!</h3>
                   <div className="icons icons1">
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="www.google.com"><AiFillGithub /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="linkedin.com"><AiFillLinkedin /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="instagram.com"><AiOutlineInstagram /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="codepen.com"><AiOutlineCodepen /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://github.com/" rel="noreferrer"><AiFillGithub /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://linkedin.com/." rel="noreferrer"><AiFillLinkedin /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/belal_elgebaly/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://codepen.io/" rel="noreferrer"><AiOutlineCodepen /></a></motion.h3>
                  </div>
                 </div>
             </motion.div>
