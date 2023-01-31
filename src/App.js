@@ -6,6 +6,8 @@ import { useState } from 'react';
 import SoundContextProvider from './contexts/SoundContext';
 import Scroll from './components/Scroll';
 import { useEffect } from 'react';
+import { useInView } from "react-intersection-observer";
+import LanguageContextProvider from './contexts/LanguageContext';
 
 function App() {
   const [scrollDir, setScrollDir] = useState("scrolling down");
@@ -35,18 +37,22 @@ function App() {
       };
     
       window.addEventListener("scroll", onScroll);
-      console.log(scrollDir);
+      // console.log(scrollDir);
     
       return () => window.removeEventListener("scroll", onScroll);
     }, [scrollDir]);
+  const {ref: footer, inView: myFooterInView} = useInView();
     
   return (
     <div className="App">
+    <LanguageContextProvider>
       <SoundContextProvider>
         {/* <Scroll /> */}
-      <Navbar scrollDir={scrollDir} />
-     <Home/>
+      <Navbar myFooterInView={myFooterInView} scrollDir={scrollDir}  />
+     <Home footer={footer} myFooterInView={myFooterInView} />
      </SoundContextProvider>
+  </LanguageContextProvider>
+
     </div>
   );
 }
