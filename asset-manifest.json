@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.5b4f35ad.css",
-    "main.js": "/portfolio/static/js/main.6cbc98cb.js",
+    "main.js": "/portfolio/static/js/main.e7a2892e.js",
     "static/media/iconics.jpg": "/portfolio/static/media/iconics.89d9d6a003fa976313b1.jpg",
     "static/media/WorkSans-VariableFont_wght.ttf": "/portfolio/static/media/WorkSans-VariableFont_wght.a334cdd18c435a867b49.ttf",
     "static/media/adventure-time.jpg": "/portfolio/static/media/adventure-time.3937a7384613116a5713.jpg",
@@ -18,10 +18,10 @@
     "static/media/switchone.mp3": "/portfolio/static/media/switchone.57bd0dfc01a928ee399b.mp3",
     "index.html": "/portfolio/index.html",
     "main.5b4f35ad.css.map": "/portfolio/static/css/main.5b4f35ad.css.map",
-    "main.6cbc98cb.js.map": "/portfolio/static/js/main.6cbc98cb.js.map"
+    "main.e7a2892e.js.map": "/portfolio/static/js/main.e7a2892e.js.map"
   },
   "entrypoints": [
     "static/css/main.5b4f35ad.css",
-    "static/js/main.6cbc98cb.js"
+    "static/js/main.e7a2892e.js"
   ]
 }
