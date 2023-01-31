@@ -1,13 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.871aeace.css",
-    "main.js": "/portfolio/static/js/main.6518ff0f.js",
+    "main.css": "/portfolio/static/css/main.bb94841a.css",
+    "main.js": "/portfolio/static/js/main.661f3ebb.js",
     "static/media/iconics.jpg": "/portfolio/static/media/iconics.89d9d6a003fa976313b1.jpg",
     "static/media/WorkSans-VariableFont_wght.ttf": "/portfolio/static/media/WorkSans-VariableFont_wght.a334cdd18c435a867b49.ttf",
     "static/media/adventure-time.jpg": "/portfolio/static/media/adventure-time.3937a7384613116a5713.jpg",
     "static/media/belal.jpeg": "/portfolio/static/media/belal.cd606e8a91a4fc0508e7.jpeg",
-    "static/media/desk2.svg": "/portfolio/static/media/desk2.217ce37d32a8a5f84b9b92b2bd8fe338.svg",
-    "static/media/desk.svg": "/portfolio/static/media/desk.cbceae9d08a821ff84af49a9de7d4f0e.svg",
     "static/media/Jenthill DEMO.ttf": "/portfolio/static/media/Jenthill DEMO.4052d3e0f49b10378b8e.ttf",
     "static/media/Mosk Medium 500.ttf": "/portfolio/static/media/Mosk Medium 500.8e0c9d0b1c222e28471d.ttf",
     "static/media/Mosk Normal 400.ttf": "/portfolio/static/media/Mosk Normal 400.4e24e76bdb6942dd7e16.ttf",
@@ -17,11 +15,11 @@
     "static/media/switchtwo.mp3": "/portfolio/static/media/switchtwo.0e44fe8040752f0ebc2b.mp3",
     "static/media/switchone.mp3": "/portfolio/static/media/switchone.57bd0dfc01a928ee399b.mp3",
     "index.html": "/portfolio/index.html",
-    "main.871aeace.css.map": "/portfolio/static/css/main.871aeace.css.map",
-    "main.6518ff0f.js.map": "/portfolio/static/js/main.6518ff0f.js.map"
+    "main.bb94841a.css.map": "/portfolio/static/css/main.bb94841a.css.map",
+    "main.661f3ebb.js.map": "/portfolio/static/js/main.661f3ebb.js.map"
   },
   "entrypoints": [
-    "static/css/main.871aeace.css",
-    "static/js/main.6518ff0f.js"
+    "static/css/main.bb94841a.css",
+    "static/js/main.661f3ebb.js"
   ]
 }
