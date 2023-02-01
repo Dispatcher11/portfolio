@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.bb94841a.css",
-    "main.js": "/portfolio/static/js/main.181b95d2.js",
+    "main.css": "/portfolio/static/css/main.1b4bb0a7.css",
+    "main.js": "/portfolio/static/js/main.de85e8ee.js",
     "static/media/iconics.jpg": "/portfolio/static/media/iconics.89d9d6a003fa976313b1.jpg",
     "static/media/WorkSans-VariableFont_wght.ttf": "/portfolio/static/media/WorkSans-VariableFont_wght.a334cdd18c435a867b49.ttf",
     "static/media/adventure-time.jpg": "/portfolio/static/media/adventure-time.3937a7384613116a5713.jpg",
@@ -15,11 +15,11 @@
     "static/media/switchtwo.mp3": "/portfolio/static/media/switchtwo.0e44fe8040752f0ebc2b.mp3",
     "static/media/switchone.mp3": "/portfolio/static/media/switchone.57bd0dfc01a928ee399b.mp3",
     "index.html": "/portfolio/index.html",
-    "main.bb94841a.css.map": "/portfolio/static/css/main.bb94841a.css.map",
-    "main.181b95d2.js.map": "/portfolio/static/js/main.181b95d2.js.map"
+    "main.1b4bb0a7.css.map": "/portfolio/static/css/main.1b4bb0a7.css.map",
+    "main.de85e8ee.js.map": "/portfolio/static/js/main.de85e8ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb94841a.css",
-    "static/js/main.181b95d2.js"
+    "static/css/main.1b4bb0a7.css",
+    "static/js/main.de85e8ee.js"
   ]
 }
