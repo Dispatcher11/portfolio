@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { createContext } from 'react';
 import { Howl } from 'howler';
-import sound2 from '../sounds/switchone.mp3';
-import sound1 from '../sounds/switchtwo.mp3';
+import sound1 from '../sounds/switchone.mp3';
+import sound2 from '../sounds/switchtwo.mp3';
 import { useEffect } from 'react';
 export const SoundContext = createContext();
 

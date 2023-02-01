@@ -1,6 +1,8 @@
 @import './Styles/index.scss';
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&display=swap');body {
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
   margin: 0;
   font-family: 'Mosak',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -9,8 +11,8 @@
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-white);
   background-color: var(--main-purple);
-  
 }
+
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -420,7 +422,7 @@
         font-size: 17.4px;
         line-height: 30px;
         word-spacing: 1px;
-        font-family: "Work Sans";
+        font-family: var(--font-small);
         font-weight: 400;
         padding-bottom: 10px;
       }
@@ -446,7 +448,7 @@
         height: 300px;
 
         h1 {
-          font-size: 55px;
+          font-size: 50px;
           line-height: 89.3%;
           padding-bottom: 15px;
         }
@@ -634,7 +636,8 @@
         color: var(--text-gray);
         line-height: 30px;
         margin-top: 10px;
-      }
+        font-family: var(--font-small)
+          }
 
       .icons {
         margin: 10px 0;
@@ -847,9 +850,7 @@
 
     h1 {
       position: absolute;
-      top: 7%;
-
-      left: var(--per);
+      top: 7%;      
       font-size: 50px;
       font-family: var(--font);
       @include md {
@@ -861,6 +862,7 @@
         font-size: 41px;
       }
     }
+    
     $circle: var(--position);
     .item-one {
       
@@ -892,11 +894,13 @@
         outline: none;
         border: solid 2px var(--text-white);
           text-align: var(--position);
+          font-family: 'Work Sans';
+
       }
 
       textarea {
         font-family: 'Work Sans';
-        font-size: .9em;
+        font-size: 1em;
       }
 
     .btn {
@@ -950,7 +954,7 @@
       // background-color: black;
       p {
         font-size: 22px;
-        font-family: 'Work Sans', sans-serif;
+        font-family: var(--font-small);
         color: var(--text-gray);
         margin-top: 0px;
         margin-bottom: 26px;
@@ -999,9 +1003,6 @@
         }
       }
 
-      .icons1 h3 {
-        padding-right: 30px;
-      }
     }
   }
 }

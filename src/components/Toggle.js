@@ -23,7 +23,9 @@ const Toggle = () => {
 
   const clickHandle = () => {
     setToggle(!toggle);
+    if (window.innerWidth > 700) {
     callMySound(soundSrc);
+  }
   };
 
     return ( 

@@ -1,5 +1,3 @@
-import desk from "../img/desk.svg";
-import desk2 from "../img/desk2.svg";
 import { SiFramer } from 'react-icons/si';
 import { DiBootstrap } from 'react-icons/di';
 import { FaHtml5 } from 'react-icons/fa';
@@ -18,13 +16,11 @@ import { AiOutlineCodepen } from 'react-icons/ai';
 import { DiCss3 } from 'react-icons/di';
 import { RxDoubleArrowDown } from 'react-icons/rx';
 import { RiReactjsLine } from 'react-icons/ri';
-import FontAwesome from 'react-fontawesome'
 import { LanguageContext } from "../contexts/LanguageContext";
 
 
 import { useInView } from "react-intersection-observer";
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef } from "react";
 import Desk from "./desk";
 import { useState } from "react";
 import { useContext } from "react";
@@ -113,6 +109,7 @@ const arrowVariants = {
   visible: {
     opacity: 1,
     y: "-10vh",
+    
     transition: {
       delay: .5,
       // duration: .7,
@@ -123,7 +120,7 @@ const arrowVariants = {
   },
   hover : {
     scale: 1.2,
-    opacity: 1
+    opacity: 1,
   }
 }
 
@@ -152,10 +149,11 @@ const Home = ({footer, myFooterInView}) => {
     root?.style.setProperty("--font", !lanToggle ? "MosakExtra" : "El Messiri");
     root?.style.setProperty("--per", !lanToggle ? "3%" : "88%");
     root?.style.setProperty("--order", !lanToggle ? "0" : "1");
+    root?.style.setProperty("--font-small", !lanToggle ? "Work Sans" : "Noto Naskh Arabic");
     
   }, [lanToggle]);
 
-
+  const direction = (lan["language"] === "arabic") ? "ltr" : "rtl";
     return ( 
       <div className="home">
      <div className="color-one"></div>
@@ -171,7 +169,7 @@ const Home = ({footer, myFooterInView}) => {
 
         <motion.div className="container-two selection-one" variants={containerVariants2} initial="hidden" animate="visible">
           {/* <p>Hi, I'm Belal</p> */}
-          <h1>{ lan["hero"][0] } <span>{ lan["hero"][1] } </span>{ lan["hero"][2] } { lan["hero"][3] } <span>{ lan["hero"][4] }</span> { lan["hero"][5] } <span>{ lan["hero"][6] }</span> { lan["hero"][7] }</h1>
+          <h1 dir={direction}>{ lan["hero"][0] } <span>{ lan["hero"][1] } </span>{ lan["hero"][2] } { lan["hero"][3] } <span>{ lan["hero"][4] }</span> { lan["hero"][5] } <span>{ lan["hero"][6] }</span> { lan["hero"][7] }</h1>
         </motion.div>
       </div>
 {/* About Section */}
@@ -181,8 +179,8 @@ const Home = ({footer, myFooterInView}) => {
       <motion.div className="item-one" variants={containerVariants2} initial="hidden" animate={myElementIsVisible1? "visible" : ''}>
         {/* <h1><a className="highlight">Frontend Developer</a></h1> */}
         <h1>{ lan["about"][0] } {(lan["language"] === "arabic") && <br />} { lan["about"][1] }</h1>
-        <p>{ lan["about"][2] }</p>
-        <p>{ lan["about"][3] }</p> 
+        <p dir={direction}>{ lan["about"][2] }</p>
+        <p dir={direction}>{ lan["about"][3] }</p> 
         {/* <p><a href="#">Check out my videos and upcoming talks.</a></p> */}
       </motion.div>
             <motion.div className="item-two" variants={containerVariants} initial="hidden" animate={myElementIsVisible1? "visible" : ''}>
@@ -202,7 +200,7 @@ const Home = ({footer, myFooterInView}) => {
             </motion.div>
             <motion.div className="item-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible2? "visible" : ''}>
                 <h3>{ lan["projects"][0][0] }</h3>
-                <p>{ lan["projects"][0][1] }</p>
+                <p dir={direction}>{ lan["projects"][0][1] }</p>
                 <h4>{ lan["projects"][0][2] }</h4>
                 <div className="icons icons1">
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><SiSass /></motion.h3>
@@ -223,7 +221,7 @@ const Home = ({footer, myFooterInView}) => {
 
             <motion.div className="item-two item-two-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible3? "visible" : ''}>
             <h3>{ lan["projects"][1][0] }</h3>
-                <p>{ lan["projects"][1][1] }</p>
+                <p dir={direction}>{ lan["projects"][1][1] }</p>
                 <h4>{ lan["projects"][1][2] }</h4>
                 <div className="icons icons2">
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><SiSass /></motion.h3>
@@ -246,7 +244,7 @@ const Home = ({footer, myFooterInView}) => {
             </motion.div>
             <motion.div className="item-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible6? "visible" : ''}>
             <h3>{ lan["projects"][0][0] }</h3>
-                <p>{ lan["projects"][0][1] }</p>
+                <p dir={direction}>{ lan["projects"][0][1] }</p>
                 <h4>{ lan["projects"][0][2] }</h4>
                 <div className="icons icons1">
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><SiSass /></motion.h3>
@@ -269,7 +267,7 @@ const Home = ({footer, myFooterInView}) => {
             <motion.h1>{ lan["headlines"][1] }</motion.h1>
             <div className="items" ref={element5}>
               <div>
-                <motion.h3 dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover="hover"><FaHtml5 /></motion.h3>
+                <motion.h3 dragSnapToOrigin drag variants={hoverVariants}  initial="hidden" animate={myElementIsVisible5? "visible" : ''} whileHover={"hover"}><FaHtml5 /></motion.h3>
                 {screenWidth && <motion.h4 variants={containerVariants} initial="hidden" animate={myElementIsVisible5? "visible" : ''}>HTML5</motion.h4> }
               </div>
               <div>
@@ -328,7 +326,7 @@ const Home = ({footer, myFooterInView}) => {
             animate="visible"
         >
             <motion.div className="square" variants={footerVariants} initial="hidden" animate={(!(myFooterInView))? "visible" : ''} >
-              <motion.h1>{ lan["contact"][5] }</motion.h1>
+              <motion.h1 style={lanToggle? {right: "3%"}: ((window.innerWidth > 700) && !lanToggle)? {left: "3%"}: {left: "0%"}} className="arabic-hey">{ lan["contact"][5] }</motion.h1>
                 <div className="item-one">
                     <input type="name" placeholder={ lan["contact"][2] } />
                     <input type="email" placeholder={ lan["contact"][3] } />
@@ -344,14 +342,14 @@ const Home = ({footer, myFooterInView}) => {
                  </div>
                 </div>
                 <div className="item-two">
-                  <p>{ lan["contact"][0] }</p>
+                  <p dir={direction}>{ lan["contact"][0] }</p>
                   {/* <p>I'm available to grab a coffee and chat! Drop a comment, question, concern, or Spotify playlist, and thanks for stopping by!</p> */}
                   <h3>{ lan["contact"][1] }</h3>
                   <div className="icons icons1">
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://github.com/" rel="noreferrer"><AiFillGithub /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://linkedin.com/." rel="noreferrer"><AiFillLinkedin /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/belal_elgebaly/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://codepen.io/" rel="noreferrer"><AiOutlineCodepen /></a></motion.h3>
+                    <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://github.com/" rel="noreferrer"><AiFillGithub /></a></motion.h3>
+                    <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://linkedin.com/." rel="noreferrer"><AiFillLinkedin /></a></motion.h3>
+                    <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/belal_elgebaly/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
+                    <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://codepen.io/" rel="noreferrer"><AiOutlineCodepen /></a></motion.h3>
                  </div>
                 </div>
             </motion.div>

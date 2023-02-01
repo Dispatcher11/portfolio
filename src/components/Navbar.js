@@ -3,7 +3,7 @@ import React from "react";
 import Toggle from "./Toggle";
 import { TiPencil } from 'react-icons/ti';
 import { AiOutlineMessage } from 'react-icons/ai';
-import { GrLanguage } from 'react-icons/gr';
+import { IoLanguageSharp } from 'react-icons/io5';
 import { AiOutlineStar } from 'react-icons/ai';
 import { RxRocket } from 'react-icons/rx';
 import { CgProfile } from 'react-icons/cg';
@@ -81,8 +81,8 @@ const { setLanToggle, lanToggle, lan} = useContext(LanguageContext);
                   <h4><AiOutlineMessage /></h4>
                   {lan["navbar"][2]}</a></li>
                   <li><a  onClick={() => setLanToggle(!lanToggle)}>
-                  <h4><GrLanguage /></h4>
-                  {lan["language"]}</a></li>
+                  <h4><IoLanguageSharp /></h4>
+                  {lan["navbar"][3]}</a></li>
              </ul>
         </motion.nav>
       </div>

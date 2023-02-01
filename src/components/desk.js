@@ -80,6 +80,11 @@ const Desk = () => {
 		// console.log(document.documentElement.scrollTop);
 		};
 
+		const [light, setLight] = useState(false);
+		setTimeout(() => {
+			setLight(true);
+		}, 1700);
+
     return ( 
 <svg id="Layer_1" style={{"enableBackground":"new 0 0 1080 1080"}} version="1.1" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlSpace="preserve">
 	<g id="_x35_a6fe8bf-98bb-4d52-87c1-f2468f4c684c" transform="matrix(1 0 0 1 540 540)"/>
@@ -179,13 +184,17 @@ const Desk = () => {
 				<rect className="st19" height="4.2" width="99.8" vectorEffect="non-scaling-stroke" x="-49.9" y="-2.1"/>
 			</g>
 			</motion.g>
+			<motion.g initial={{y: "-50vh"}} animate={{y: 0}} transition={{delay: 1}}>
 			<g transform="matrix(1 0 0 1 -17.91 -112.95)">
 				<path className="st20" d="M11.8,0c0,7.1-5.3,12.9-11.8,12.9c-6.5,0-11.7-5.8-11.7-12.9     S-6.5-12.9,0-12.9C6.5-12.9,11.8-7.1,11.8,0z" vectorEffect="non-scaling-stroke"/>
 			</g>
             <a href="#">
-			<g onClick={click} id="light" className={toggle? "light-on" : "light-off"} transform="matrix(1 0 0 1 -13.86 16.26)">
+				{/* start light */}
+			{light && <g onClick={click} id="light" className={toggle? "light-on" : "light-off"} transform="matrix(1 0 0 1 -13.86 16.26)">
 				<polygon className="st21" points="-30.4,-129.2 -124.4,129.2 124.4,129.2 22.2,-129.2    " vectorEffect="non-scaling-stroke"/>
-			</g>                
+			</g>    }    
+				{/* end light */}
+
             </a>
 
 			<g id="light_00000007414788025995047120000008032692188891973807_" transform="matrix(1 0 0 1 -17.91 -210.49)">
@@ -208,15 +217,18 @@ const Desk = () => {
 			<g id="light_00000044897804992477434110000014733005151247895712_" transform="matrix(1 0 0 1 -17.91 -113.08)">
 				<polygon className="st18" points="26.3,-1.9 -26.3,-1.9 -28.4,-1.9 -28.4,1.9 28.4,1.9      28.4,-1.9    " vectorEffect="non-scaling-stroke"/>
 			</g>
+			</motion.g>
 			<g id="desk" transform="matrix(1 0 0 1 -8.41 150.48)">
 				<path className="st19" d="M-136-5h272c2.8,0,5,2.2,5,5l0,0c0,2.8-2.2,5-5,5h-272     c-2.8,0-5-2.2-5-5l0,0C-141-2.8-138.8-5-136-5z" vectorEffect="non-scaling-stroke"/>
 			</g>
+			<motion.g initial={{y: "-100vh"}} animate={{y: 0}} transition={{delay: .15, duration: .7, type: "tween"}}>
 			<g transform="matrix(1 0 0 1 -99.37 131.55)">
 				<path className="st22" d="M2.9-4.4c0,0.5-0.4,0.9-0.9,0.9c-0.5,0-0.9-0.4-0.9-0.9     c0-0.3-0.1-0.6-0.3-0.9C0.7-5.7,0.4-6.1,0-6.4c-0.3-0.3-0.7-0.4-1.2-0.4c-0.3,0-0.5,0.1-0.7,0.2L-2-6.5c-0.6,0.4-0.9,1-1,1.6     c-0.1,1,0.1,1.9,0.6,2.8C-2.4-2-2.3-1.8-2.2-1.6c0.8,1.1,1.7,2.1,2.7,3c1.8,1.7,3.7,3.5,4.2,6c0.1,0.3,0,0.7-0.2,0.9     C4.3,8.5,4,8.6,3.6,8.5S3.1,8.1,3.1,7.8c-0.4-2-2.1-3.6-3.7-5.1c-1.1-1-2.1-2.1-3-3.4C-3.8-0.9-3.9-1.1-4-1.3     c-0.6-1.2-0.9-2.5-0.8-3.8C-4.6-6.3-3.9-7.4-2.9-8l0.3-0.1c0.5-0.2,1-0.4,1.5-0.4c0.8,0,1.6,0.3,2.2,0.8c0.6,0.5,1.1,1,1.4,1.7     C2.8-5.5,2.9-5,2.9-4.4z" vectorEffect="non-scaling-stroke"/>
 			</g>
 			<g transform="matrix(1 0 0 1 -88.58 133.68)">
 				<path className="st23" d="M8.9-11.6C9-6.9,7.8,7.8,4,11.6H-4C-7.8,7.8-9-6.9-8.9-11.6H8.9z" vectorEffect="non-scaling-stroke"/>
 			</g>
+			</motion.g>
 			<g transform="matrix(1 0 0 1 -87.55 109.32)">
 				<path className="st24" d="M-0.2,6.2c-0.6-0.6-3-3.5,0-6.2c3-2.7,1.9-3.8,0.1-6.2" vectorEffect="non-scaling-stroke"/>
 			</g>
