@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.2d62947b.css",
-    "main.js": "/portfolio/static/js/main.2a2294cb.js",
+    "main.css": "/portfolio/static/css/main.5183858e.css",
+    "main.js": "/portfolio/static/js/main.195cbae8.js",
     "static/media/iconics6.jpg": "/portfolio/static/media/iconics6.f238dc64dd7a8c5602fa.jpg",
     "static/media/iconics6d.jpg": "/portfolio/static/media/iconics6d.2a25fb6fb6a17a93f265.jpg",
-    "static/media/gallery.jpg": "/portfolio/static/media/gallery.c39015f6e0f3ed691c26.jpg",
-    "static/media/galleryd.jpg": "/portfolio/static/media/galleryd.ccde24b5c9eec812532e.jpg",
+    "static/media/gallery.jpg": "/portfolio/static/media/gallery.f5fa4ff5c186a0f64c0c.jpg",
+    "static/media/galleryd.jpg": "/portfolio/static/media/galleryd.f308c0246c2fb6e26835.jpg",
     "static/media/WorkSans-VariableFont_wght.ttf": "/portfolio/static/media/WorkSans-VariableFont_wght.a334cdd18c435a867b49.ttf",
     "static/media/adventure-time.jpg": "/portfolio/static/media/adventure-time.3937a7384613116a5713.jpg",
     "static/media/belal.jpeg": "/portfolio/static/media/belal.cd606e8a91a4fc0508e7.jpeg",
@@ -18,11 +18,11 @@
     "static/media/switchtwo.mp3": "/portfolio/static/media/switchtwo.0e44fe8040752f0ebc2b.mp3",
     "static/media/switchone.mp3": "/portfolio/static/media/switchone.57bd0dfc01a928ee399b.mp3",
     "index.html": "/portfolio/index.html",
-    "main.2d62947b.css.map": "/portfolio/static/css/main.2d62947b.css.map",
-    "main.2a2294cb.js.map": "/portfolio/static/js/main.2a2294cb.js.map"
+    "main.5183858e.css.map": "/portfolio/static/css/main.5183858e.css.map",
+    "main.195cbae8.js.map": "/portfolio/static/js/main.195cbae8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d62947b.css",
-    "static/js/main.2a2294cb.js"
+    "static/css/main.5183858e.css",
+    "static/js/main.195cbae8.js"
   ]
 }
