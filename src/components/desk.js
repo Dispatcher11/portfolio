@@ -86,7 +86,7 @@ const Desk = () => {
 		}, 1700);
 
     return ( 
-<svg id="Layer_1" style={{"enableBackground":"new 0 0 1080 1080"}} version="1.1" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlSpace="preserve">
+<svg id="Layer_1" style={{"enableBackground":"new 0 0 1080 1080"}} version="1.1" viewBox="140 0 850 1080" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlSpace="preserve">
 	<g id="_x35_a6fe8bf-98bb-4d52-87c1-f2468f4c684c" transform="matrix(1 0 0 1 540 540)"/>
 	<g id="_x31_242b916-0f68-4bce-a717-6fed70e5c597" transform="matrix(1 0 0 1 540 540)">
 		<rect className="st0" height="1080" width="1080" vectorEffect="non-scaling-stroke" x="-540" y="-540"/>

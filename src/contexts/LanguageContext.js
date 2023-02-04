@@ -32,6 +32,10 @@ const LanguageContextProvider = (props) => {
                     "On this website you can find the most iconic and memorable scenes of the best TV shows, series, and movies!",
                     "MADE WITH"
                 ],
+                [
+                    "Gallery!",
+                    "Looking for beauty? No problem! Here are some unique collections to nourish your eyes!",
+                ],
             ],
             contact: [
                 "I'm available to grab a coffee and chat! Drop a comment, if you got a question, concern, or Spotify playlist, and thanks for stopping by!",
@@ -90,6 +94,10 @@ const LanguageContextProvider = (props) => {
                     "!أيقونات سينمائية",
                     "يمكنك العثور في هذا الموقع على أكثر المشاهد شهرة و تذكرًا لأفضل البرامج التلفزيونية والمسلسلات والأفلام!",
                     "صنع مع"
+                ],
+                [
+                    "!معرض",
+                    "هل تبحث عن الجمال؟ لا مشكلة! إليك بعض المجموعات الفريدة لتغذية عينيك!",
                 ],
             ],
             contact: [

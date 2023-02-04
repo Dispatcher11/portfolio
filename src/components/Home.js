@@ -17,6 +17,7 @@ import { DiCss3 } from 'react-icons/di';
 import { RxDoubleArrowDown } from 'react-icons/rx';
 import { RiReactjsLine } from 'react-icons/ri';
 import { LanguageContext } from "../contexts/LanguageContext";
+import { SoundContext } from "../contexts/SoundContext";
 
 
 import { useInView } from "react-intersection-observer";
@@ -136,6 +137,7 @@ const Home = ({footer, myFooterInView}) => {
   const {ref: element6, inView: myElementIsVisible6 } = useInView();
   // const {ref: footer, inView: myFooterInView} = useInView();
   const { lan, lanToggle } = useContext(LanguageContext);
+  const { toggle} = useContext(SoundContext);
 
   const [show, setShow] = useState(false);
   const screenWidth = useState((window.innerWidth > 480? true : true));
@@ -216,7 +218,7 @@ const Home = ({footer, myFooterInView}) => {
 
           <div className="flex-container" ref={element3}>
             <motion.div className="item-one item-one-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible3? "visible" : ''}>
-              <div className="image image2"></div>
+              <div className={toggle? "image image2" : "image image2d"}></div>
             </motion.div>
 
             <motion.div className="item-two item-two-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible3? "visible" : ''}>
@@ -226,8 +228,8 @@ const Home = ({footer, myFooterInView}) => {
                 <div className="icons icons2">
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><SiSass /></motion.h3>
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><SiFramer /></motion.h3>
-                <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><DiJavascript /></motion.h3>
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><RiReactjsLine /></motion.h3>
+                {/* <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><DiJavascript /></motion.h3> */}
                 </div>
                 <div className="button">
                 <a href="https://be234.github.io/studio/" target="_blank" rel="noreferrer"><div>{ lan["projects"][0][3] }</div></a>
@@ -240,20 +242,20 @@ const Home = ({footer, myFooterInView}) => {
          exit={{opacity: 0}}
           className="flex-container" ref={element6}>
             <motion.div className="item-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible6? "visible" : ''}>
-              <div className="image image1"></div>
+              <div className={toggle? "image image3" : "image image3d"}></div>
             </motion.div>
             <motion.div className="item-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible6? "visible" : ''}>
-            <h3>{ lan["projects"][0][0] }</h3>
-                <p dir={direction}>{ lan["projects"][0][1] }</p>
+            <h3>{ lan["projects"][2][0] }</h3>
+                <p dir={direction}>{ lan["projects"][2][1] }</p>
                 <h4>{ lan["projects"][0][2] }</h4>
                 <div className="icons icons1">
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><SiSass /></motion.h3>
                 <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><RiReactjsLine /></motion.h3>
-                <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><FaHtml5 /></motion.h3>
+                <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><DiJavascript /></motion.h3>
                 {/* <motion.h3 drag dragSnapToOrigin><DiTerminal /></motion.h3> */}
                 </div>
                 <div className="button">
-                  <a href="https://be234.github.io/adventure-time/" target="_blank" rel="noreferrer"><div>{ lan["projects"][0][3] }</div></a>
+                  <a href="https://be234.github.io/gallery/" target="_blank" rel="noreferrer"><div>{ lan["projects"][0][3] }</div></a>
                 </div>
             </motion.div>
           </motion.div>)}
