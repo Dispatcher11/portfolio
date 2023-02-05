@@ -86,7 +86,7 @@ const Desk = () => {
 		}, 1700);
 
     return ( 
-<svg id="Layer_1" style={{"enableBackground":"new 0 0 1080 1080"}} version="1.1" viewBox="140 0 850 1080" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlSpace="preserve">
+<svg id="Layer_1" style={{"enableBackground":"new 140 0 850 1080"}} version="1.1" viewBox="140 0 850 1080" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" xmlSpace="preserve">
 	<g id="_x35_a6fe8bf-98bb-4d52-87c1-f2468f4c684c" transform="matrix(1 0 0 1 540 540)"/>
 	<g id="_x31_242b916-0f68-4bce-a717-6fed70e5c597" transform="matrix(1 0 0 1 540 540)">
 		<rect className="st0" height="1080" width="1080" vectorEffect="non-scaling-stroke" x="-540" y="-540"/>
@@ -188,7 +188,7 @@ const Desk = () => {
 			<g transform="matrix(1 0 0 1 -17.91 -112.95)">
 				<path className="st20" d="M11.8,0c0,7.1-5.3,12.9-11.8,12.9c-6.5,0-11.7-5.8-11.7-12.9     S-6.5-12.9,0-12.9C6.5-12.9,11.8-7.1,11.8,0z" vectorEffect="non-scaling-stroke"/>
 			</g>
-            <a href="#">
+            <a href="javascript:{}">
 				{/* start light */}
 			{light && <g onClick={click} id="light" className={toggle? "light-on" : "light-off"} transform="matrix(1 0 0 1 -13.86 16.26)">
 				<polygon className="st21" points="-30.4,-129.2 -124.4,129.2 124.4,129.2 22.2,-129.2    " vectorEffect="non-scaling-stroke"/>

@@ -16,3 +16,32 @@
       }
     }
   }
+
+  @mixin box-btn1($bg, $text-color, $height: 10px, $width: 170px) {
+    width: $width;
+    background-color: $text-color;
+    // color: black;
+    text-align: center;
+    margin-top: 20px;
+
+    div {
+      background-color: $bg;
+      padding: $height 0px;
+      border: solid 3px $text-color;
+      transform: translateX(5px) translateY(-5px);
+      transition: .1s ease-out;
+      &:hover {
+      transform: translateX(0px) translateY(0px);
+      }
+      input {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        color: $text-color;
+        font-family: var(--font);
+
+      }
+    }
+  }

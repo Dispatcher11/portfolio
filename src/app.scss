@@ -606,6 +606,9 @@ body {
       .image3d {
         background: url('./img/galleryd.jpg');
       }
+      .image4 {
+        background: url('./img/old-portfolio.jpg');
+      }
       .image {
         width: 100%;
         height: 100%;
@@ -655,6 +658,9 @@ body {
 
       p {
         font-size: 23px;
+        @include sm {
+          font-size: 23px;
+        }
         font-family: 'MosakLight';
         color: var(--text-gray);
         line-height: 30px;
@@ -798,7 +804,7 @@ body {
     height: 90px;
     background-color: inherit;
     bottom: 0;
-    z-index: 3;
+    z-index: 1;
     bottom: -5em;
     
   }
@@ -931,12 +937,11 @@ body {
       }
 
     .btn {
-      @include box-btn(var(--main-dark), var(--text-white), 10px);
+      @include box-btn1(var(--main-dark), var(--text-white), 10px);
       @include md {
-        @include box-btn(var(--main-dark), var(--text-white), 10px, 100%);
+        @include box-btn1(var(--main-dark), var(--text-white), 10px, 100%);
       }
       font-family: var(--font);
-
     }
 
     .icons {
@@ -1100,3 +1105,4 @@ body {
   font-family: var(--font);
 
 }
+// "homepage": "https://algebaly.com",

@@ -36,6 +36,10 @@ const LanguageContextProvider = (props) => {
                     "Gallery!",
                     "Looking for beauty? No problem! Here are some unique collections to nourish your eyes!",
                 ],
+                [
+                    "Previous Portfolio!",
+                    "My first portfolio website I built in 2021, since then my web development and design skills have improved immensely!",
+                ],
             ],
             contact: [
                 "I'm available to grab a coffee and chat! Drop a comment, if you got a question, concern, or Spotify playlist, and thanks for stopping by!",
@@ -98,6 +102,10 @@ const LanguageContextProvider = (props) => {
                 [
                     "!معرض",
                     "هل تبحث عن الجمال؟ لا مشكلة! إليك بعض المجموعات الفريدة لتغذية عينيك!",
+                ],
+                [
+                    "!موقع تعريفي سابق",
+                    "أول موقع إلكتروني تعريفي قمت بإنشائه في عام 2021، ومنذ ذلك الحين تحسنت مهاراتي في تطوير وتصميم الويب بشكل كبير!",
                 ],
             ],
             contact: [

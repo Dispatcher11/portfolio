@@ -135,6 +135,7 @@ const Home = ({footer, myFooterInView}) => {
   const {ref: element4, inView: myElementIsVisible4} = useInView();
   const {ref: element5, inView: myElementIsVisible5} = useInView();
   const {ref: element6, inView: myElementIsVisible6 } = useInView();
+  const {ref: element7, inView: myElementIsVisible7 } = useInView();
   // const {ref: footer, inView: myFooterInView} = useInView();
   const { lan, lanToggle } = useContext(LanguageContext);
   const { toggle} = useContext(SoundContext);
@@ -237,8 +238,7 @@ const Home = ({footer, myFooterInView}) => {
             </motion.div>
           </div>
           
-          <AnimatePresence>
-         {show && ( <motion.div
+          <motion.div
          exit={{opacity: 0}}
           className="flex-container" ref={element6}>
             <motion.div className="item-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible6? "visible" : ''}>
@@ -258,7 +258,34 @@ const Home = ({footer, myFooterInView}) => {
                   <a href="https://be234.github.io/gallery/" target="_blank" rel="noreferrer"><div>{ lan["projects"][0][3] }</div></a>
                 </div>
             </motion.div>
+          </motion.div>
+
+          <AnimatePresence>
+
+            
+         {show && ( <motion.div
+         exit={{opacity: 0}}
+          className="flex-container" ref={element7}>
+            <motion.div className="item-one item-one-one" variants={containerVariants} initial="hidden" animate={myElementIsVisible7? "visible" : ''}>
+              <div className="image image4"></div>
+            </motion.div>
+            <motion.div className="item-two item-two-two" variants={containerVariants2} initial="hidden" animate={myElementIsVisible7? "visible" : ''}>
+            <h3>{ lan["projects"][3][0] }</h3>
+                <p dir={direction}>{ lan["projects"][3][1] }</p>
+                <h4>{ lan["projects"][0][2] }</h4>
+                <div className="icons icons1">
+                <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><DiCss3 /></motion.h3>
+                <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><RiReactjsLine /></motion.h3>
+                <motion.h3 variants={hoverVariants} whileHover="hover" drag dragSnapToOrigin><DiBootstrap /></motion.h3>
+                {/* <motion.h3 drag dragSnapToOrigin><DiTerminal /></motion.h3> */}
+                </div>
+                <div className="button">
+                  <a href="https://be234.github.io/belal-project/" target="_blank" rel="noreferrer"><div>{ lan["projects"][0][3] }</div></a>
+                </div>
+            </motion.div>
           </motion.div>)}
+
+
           </AnimatePresence>
           
           <motion.div whileHover="hover" animate={myElementIsVisible4? "visible" : ''} className="arrows" variants={arrowVariants} initial="hidden">
@@ -329,12 +356,13 @@ const Home = ({footer, myFooterInView}) => {
         >
             <motion.div className="square" variants={footerVariants} initial="hidden" animate={(!(myFooterInView))? "visible" : ''} >
               <motion.h1 style={lanToggle? {right: "3%"}: ((window.innerWidth > 700) && !lanToggle)? {left: "3%"}: {left: "0%"}} className="arabic-hey">{ lan["contact"][5] }</motion.h1>
-                <div className="item-one">
-                    <input type="name" placeholder={ lan["contact"][2] } />
-                    <input type="email" placeholder={ lan["contact"][3] } />
-                    <textarea placeholder={ lan["contact"][4] } cols="30" rows={(window.innerWidth > 700) ? "9" : "5"}></textarea>
+                <form action='' className="item-one" id='form'>
+                    <input type="text" name='name' placeholder={ lan["contact"][2] } required/>
+                    <input type="email" name="email" placeholder={ lan["contact"][3] } required />
+                    <textarea placeholder={ lan["contact"][4] } cols="30" rows={(window.innerWidth > 700) ? "9" : "5"} required></textarea>
+                  
                     <div className="btn">
-                      <div>{ lan["contact"][6] }</div>
+                      <div><a href="https://be234.github.io/portfolio/"><input type="submit" value={ lan["contact"][6] } /></a></div>
                     </div>
                     <div className="icons icons1">
                     <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://github.com/" rel="noreferrer"><AiFillGithub /></a></motion.h3>
@@ -342,7 +370,7 @@ const Home = ({footer, myFooterInView}) => {
                     <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/belal_elgebaly/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
                     <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://codepen.io/" rel="noreferrer"><AiOutlineCodepen /></a></motion.h3>
                  </div>
-                </div>
+                </form>
                 <div className="item-two">
                   <p dir={direction}>{ lan["contact"][0] }</p>
                   {/* <p>I'm available to grab a coffee and chat! Drop a comment, question, concern, or Spotify playlist, and thanks for stopping by!</p> */}
