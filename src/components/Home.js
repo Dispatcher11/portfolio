@@ -367,7 +367,7 @@ const Home = ({footer, myFooterInView}) => {
                     <div className="icons icons1">
                     <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://github.com/" rel="noreferrer"><AiFillGithub /></a></motion.h3>
                     <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://linkedin.com/." rel="noreferrer"><AiFillLinkedin /></a></motion.h3>
-                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/belal_elgebaly/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
+                    <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
                     <motion.h3 whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://codepen.io/" rel="noreferrer"><AiOutlineCodepen /></a></motion.h3>
                  </div>
                 </form>
@@ -378,7 +378,7 @@ const Home = ({footer, myFooterInView}) => {
                   <div className="icons icons1">
                     <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://github.com/" rel="noreferrer"><AiFillGithub /></a></motion.h3>
                     <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://linkedin.com/." rel="noreferrer"><AiFillLinkedin /></a></motion.h3>
-                    <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/belal_elgebaly/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
+                    <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://www.instagram.com/" rel="noreferrer"><AiOutlineInstagram /></a></motion.h3>
                     <motion.h3  style={direction === "ltr" ? {"padding-right": "30px"}: {"padding-left": "30px"}} whileHover={{scale: 1.2, originX: 0}}><a target="_blank" href="https://codepen.io/" rel="noreferrer"><AiOutlineCodepen /></a></motion.h3>
                  </div>
                 </div>
